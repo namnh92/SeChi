@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAB60CFE2452EE0500A3DC68 /* HMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */; };
+		CAB60CFF2452EE0500A3DC68 /* HMHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */; };
 		CAC7D08C24513246004DA2E1 /* HMRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */; };
 		CAC7D08E2451355C004DA2E1 /* ChatContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08D2451355C004DA2E1 /* ChatContentViewModel.swift */; };
 		CAC7D0912451456F004DA2E1 /* HMChatBotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */; };
@@ -21,6 +23,14 @@
 		CAC7D0AC24529817004DA2E1 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC7D0AB24529817004DA2E1 /* CallKit.framework */; };
 		CAC7D0AE24529826004DA2E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC7D0AD24529826004DA2E1 /* UserNotifications.framework */; };
 		CAC7D0B024529B24004DA2E1 /* HMOneSignalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D0AF24529B24004DA2E1 /* HMOneSignalNotificationService.swift */; };
+		CAEC3B6D2452F0B50076DB66 /* HMReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC3B6B2452F0B50076DB66 /* HMReminderVC.swift */; };
+		CAEC3B6E2452F0B50076DB66 /* HMReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEC3B6C2452F0B50076DB66 /* HMReminderVC.xib */; };
+		CAEC3B712452F0C00076DB66 /* HMCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC3B6F2452F0C00076DB66 /* HMCalendarVC.swift */; };
+		CAEC3B722452F0C00076DB66 /* HMCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEC3B702452F0C00076DB66 /* HMCalendarVC.xib */; };
+		CAEC3B772452FAEF0076DB66 /* HMReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC3B752452FAEF0076DB66 /* HMReminderCell.swift */; };
+		CAEC3B782452FAEF0076DB66 /* HMReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEC3B762452FAEF0076DB66 /* HMReminderCell.xib */; };
+		CAEC3B7B2452FB5D0076DB66 /* HMReminderCollapseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEC3B792452FB5D0076DB66 /* HMReminderCollapseCell.swift */; };
+		CAEC3B7C2452FB5D0076DB66 /* HMReminderCollapseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEC3B7A2452FB5D0076DB66 /* HMReminderCollapseCell.xib */; };
 		CB58A48022ACFE8000F35564 /* HMWebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */; };
 		CB58A48322ACFE8000F35564 /* HMSocketIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */; };
 		CB58A48622ACFE8000F35564 /* HMSocketConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */; };
@@ -122,6 +132,8 @@
 		A9564E4D8EDDEB92173DA5C9 /* Pods-Staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Staging.release.xcconfig"; path = "Target Support Files/Pods-Staging/Pods-Staging.release.xcconfig"; sourceTree = "<group>"; };
 		C8DC553A5DC58EFC77ECF343 /* Pods-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.debug.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		C8DC8BC93A399167AEFC2347 /* Pods-Develop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.release.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.release.xcconfig"; sourceTree = "<group>"; };
+		CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMHomeVC.swift; sourceTree = "<group>"; };
+		CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMHomeVC.xib; sourceTree = "<group>"; };
 		CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMRootTabBarController.swift; sourceTree = "<group>"; };
 		CAC7D08D2451355C004DA2E1 /* ChatContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentViewModel.swift; sourceTree = "<group>"; };
 		CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMChatBotVC.swift; sourceTree = "<group>"; };
@@ -137,6 +149,14 @@
 		CAC7D0AB24529817004DA2E1 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		CAC7D0AD24529826004DA2E1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		CAC7D0AF24529B24004DA2E1 /* HMOneSignalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMOneSignalNotificationService.swift; sourceTree = "<group>"; };
+		CAEC3B6B2452F0B50076DB66 /* HMReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMReminderVC.swift; sourceTree = "<group>"; };
+		CAEC3B6C2452F0B50076DB66 /* HMReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMReminderVC.xib; sourceTree = "<group>"; };
+		CAEC3B6F2452F0C00076DB66 /* HMCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMCalendarVC.swift; sourceTree = "<group>"; };
+		CAEC3B702452F0C00076DB66 /* HMCalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMCalendarVC.xib; sourceTree = "<group>"; };
+		CAEC3B752452FAEF0076DB66 /* HMReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMReminderCell.swift; sourceTree = "<group>"; };
+		CAEC3B762452FAEF0076DB66 /* HMReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMReminderCell.xib; sourceTree = "<group>"; };
+		CAEC3B792452FB5D0076DB66 /* HMReminderCollapseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMReminderCollapseCell.swift; sourceTree = "<group>"; };
+		CAEC3B7A2452FB5D0076DB66 /* HMReminderCollapseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMReminderCollapseCell.xib; sourceTree = "<group>"; };
 		CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMWebSocketService.swift; sourceTree = "<group>"; };
 		CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketIOService.swift; sourceTree = "<group>"; };
 		CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketConfiguration.swift; sourceTree = "<group>"; };
@@ -268,6 +288,27 @@
 				CAC7D0A524519B8C004DA2E1 /* HMSharedData.swift */,
 			);
 			path = SharedData;
+			sourceTree = "<group>";
+		};
+		CAEC3B732452FACF0076DB66 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CAEC3B752452FAEF0076DB66 /* HMReminderCell.swift */,
+				CAEC3B762452FAEF0076DB66 /* HMReminderCell.xib */,
+				CAEC3B792452FB5D0076DB66 /* HMReminderCollapseCell.swift */,
+				CAEC3B7A2452FB5D0076DB66 /* HMReminderCollapseCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CAEC3B742452FAD50076DB66 /* Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				CAEC3B732452FACF0076DB66 /* Cells */,
+				CAEC3B6B2452F0B50076DB66 /* HMReminderVC.swift */,
+				CAEC3B6C2452F0B50076DB66 /* HMReminderVC.xib */,
+			);
+			path = Reminder;
 			sourceTree = "<group>";
 		};
 		CB58A47622ACFE8000F35564 /* CoreSocket */ = {
@@ -630,8 +671,13 @@
 		EDAD9D462238B287006D8A5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CAEC3B742452FAD50076DB66 /* Reminder */,
 				CB86353B225BA5360081CB75 /* Base */,
 				CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */,
+				CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */,
+				CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */,
+				CAEC3B6F2452F0C00076DB66 /* HMCalendarVC.swift */,
+				CAEC3B702452F0C00076DB66 /* HMCalendarVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -836,10 +882,13 @@
 				ED73841D2317D08D0026435C /* Roboto-Light.ttf in Resources */,
 				ED73842C2317D08D0026435C /* Roboto-Thin.ttf in Resources */,
 				ED73840B2317D08D0026435C /* Roboto-BoldCondensed.ttf in Resources */,
+				CAEC3B6E2452F0B50076DB66 /* HMReminderVC.xib in Resources */,
 				ED7384202317D08D0026435C /* Roboto-LightItalic.ttf in Resources */,
 				ED7383FF2317D08D0026435C /* NOTICE.txt in Resources */,
+				CAEC3B722452F0C00076DB66 /* HMCalendarVC.xib in Resources */,
 				ED7384142317D08D0026435C /* Roboto-Condensed.ttf in Resources */,
 				ED73840E2317D08D0026435C /* Roboto-BoldCondensedItalic.ttf in Resources */,
+				CAB60CFF2452EE0500A3DC68 /* HMHomeVC.xib in Resources */,
 				ED7384112317D08D0026435C /* Roboto-BoldItalic.ttf in Resources */,
 				ED7384232317D08D0026435C /* Roboto-Medium.ttf in Resources */,
 				ED7384292317D08D0026435C /* Roboto-Regular.ttf in Resources */,
@@ -849,9 +898,11 @@
 				ED73841A2317D08D0026435C /* Roboto-Italic.ttf in Resources */,
 				CAC7D0A0245181C7004DA2E1 /* HMSoundWaveView.xib in Resources */,
 				ED7384022317D08D0026435C /* Roboto-Black.ttf in Resources */,
+				CAEC3B7C2452FB5D0076DB66 /* HMReminderCollapseCell.xib in Resources */,
 				ED7384322317D08D0026435C /* Roboto_Specimen_Book.pdf in Resources */,
 				ED7384052317D08D0026435C /* Roboto-BlackItalic.ttf in Resources */,
 				EDAD9DC62238B5B8006D8A5C /* Assets.xcassets in Resources */,
+				CAEC3B782452FAEF0076DB66 /* HMReminderCell.xib in Resources */,
 				ED7384262317D08D0026435C /* Roboto-MediumItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,6 +957,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB86355C225BA84B0081CB75 /* HMRectangularView.swift in Sources */,
+				CAEC3B6D2452F0B50076DB66 /* HMReminderVC.swift in Sources */,
 				ED412AA622E6B9B1008B802D /* HMPopUpViewController.swift in Sources */,
 				ED80DED7225708F900C9FAFF /* HMURLConstants.swift in Sources */,
 				EDAD9E5E2238FAAA006D8A5C /* UICollectionView+Extension.swift in Sources */,
@@ -927,6 +979,7 @@
 				CAC7D09A2451814C004DA2E1 /* HMCustomNibView.swift in Sources */,
 				ED412ACD22E6B9FC008B802D /* HMRotationLabel.swift in Sources */,
 				CAC7D09424517769004DA2E1 /* HMChatBotAPI.swift in Sources */,
+				CAEC3B7B2452FB5D0076DB66 /* HMReminderCollapseCell.swift in Sources */,
 				ED1D6AFA2303B7C000CD983E /* HMChatService.swift in Sources */,
 				ED5BF4282327429A00B8CECE /* HMMessageConstants.swift in Sources */,
 				CB863558225BA8300081CB75 /* HMCircleView.swift in Sources */,
@@ -936,6 +989,7 @@
 				EDAD9E6A2238FDF4006D8A5C /* UIView+Extension.swift in Sources */,
 				CB863542225BA7070081CB75 /* HMSystemInfo.swift in Sources */,
 				ED412A2222E56B42008B802D /* HMAPIConfiguration.swift in Sources */,
+				CAEC3B772452FAEF0076DB66 /* HMReminderCell.swift in Sources */,
 				ED412AC122E6B9D9008B802D /* HMInsetTextField.swift in Sources */,
 				ED80E066225C293B00C9FAFF /* UILabel+Extension.swift in Sources */,
 				EDAD9E5A2238FA8E006D8A5C /* UITableView+Extension.swift in Sources */,
@@ -948,6 +1002,7 @@
 				ED412AC422E6B9D9008B802D /* HMNoCursorTextField.swift in Sources */,
 				EDAD9E552238F038006D8A5C /* UIViewController+Extension.swift in Sources */,
 				EDAD9E362238C0F5006D8A5C /* HMConstants.swift in Sources */,
+				CAB60CFE2452EE0500A3DC68 /* HMHomeVC.swift in Sources */,
 				ED80DEBC2256F24E00C9FAFF /* HMAPIResponse.swift in Sources */,
 				CB863554225BA8230081CB75 /* HMGradientView.swift in Sources */,
 				CBDC92B122F880870064C03C /* HMRealmService.swift in Sources */,
@@ -967,6 +1022,7 @@
 				CB58A48022ACFE8000F35564 /* HMWebSocketService.swift in Sources */,
 				ED1D6AF62303B6BA00CD983E /* HMBaseAudioVC.swift in Sources */,
 				EDAD9E7A22390A7E006D8A5C /* HMAPIEnvironmentProtocol.swift in Sources */,
+				CAEC3B712452F0C00076DB66 /* HMCalendarVC.swift in Sources */,
 				ED412A9E22E6B9A4008B802D /* HMPermission.swift in Sources */,
 				EDAD9DB22238B5B8006D8A5C /* AppDelegate.swift in Sources */,
 				ED412AC822E6B9F3008B802D /* HMCircularProgressView.swift in Sources */,

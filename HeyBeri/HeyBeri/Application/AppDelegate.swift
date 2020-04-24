@@ -27,12 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         HMOneSignalNotificationService.shared.registerOneSignal(launchOptions: launchOptions)
         
         // config
-        voipRegistration()
-        settingNaviBarBG()
-        settingTabBarBG()
         
         // Init root viewcontroller
-        HMSystemBoots.instance.changeRoot(window: &window, rootController: HMRootTabBarController.instance)
+        let nav = UINavigationController(rootViewController: HMHomeVC.create())
+        HMSystemBoots.instance.changeRoot(window: &window, rootController: nav)
         
         return true
     }
@@ -63,35 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Private method
-    private func settingNaviBarBG() {
-        // Sets background to a blank/empty image
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-//        // Sets shadow (line below the bar) to a blank image
-//        UINavigationBar.appearance().shadowImage = UIImage().createSelectionIndicator(color: UIColor.navBarShadowColor, size: CGSize(width: HMSystemInfo.screenWidth, height: 1.0))
-//        // Sets the translucent background color
-        UINavigationBar.appearance().backgroundColor = .white
-        // Set translucent. (Default value is already true, so this can be removed if desired.)
-        UINavigationBar.appearance().isTranslucent = false
-        if #available(iOS 11, *) {}
-        else {
-            //            UINavigationBar.appearance().isTranslucent = false
-        }
-    }
-    
-    private func settingTabBarBG() {
-        if #available(iOS 11, *) {}
-        else {
-            //            UITabBar.appearance().isTranslucent = false
-        }
-    }
-    
-    private func voipRegistration() {
-        // Create a push registry object
-        let mainQueue = DispatchQueue.main
-        let voipRegistry: PKPushRegistry = PKPushRegistry(queue: mainQueue)
-        voipRegistry.delegate = self
-        voipRegistry.desiredPushTypes = [PKPushType.voIP]
-    }
 }
 
 //MARK: - PKPushRegistryDelegate
