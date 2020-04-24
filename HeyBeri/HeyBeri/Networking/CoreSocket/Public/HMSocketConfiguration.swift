@@ -19,7 +19,7 @@ class HMSocketConfiguration {
             clientId = generateClientId()
             HMSharedData.chatBotSenderId = clientId
         }
-        return "wss://bot.fpt.ai/ws/livechat" + "/" + HMConstants.chatBotToken + "/" + clientId + "/"
+        return "wss://viettelgroup.ai/voice/api/asr/v1/ws/decode_online"
     }
     
     static var httpUrl: String {

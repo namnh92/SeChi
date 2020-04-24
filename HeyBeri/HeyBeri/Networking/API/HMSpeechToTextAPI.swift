@@ -13,10 +13,10 @@ import Alamofire
 class HMSpeechToTextAPI: HMAPIOperation<HMSpeechToTextAPIResponse> {
     init(data: Data) {
         super.init(request: HMAPIRequest(name: "Speech To Text API",
-                                       path: "",
+                                       path: "asr/v1/rest/decode_file",
                                        method: .post,
                                        parameters: .multiparts(parameters: [:], multiparts: [MultipartForm(data: data, name: "file", fileName: "speech_reg", mimeType: "wav")]),
-                                       enviroment: HMAPIMainEnvironment.speechToText))
+                                       enviroment: HMAPIMainEnvironment.viettelAI))
     }
 }
 struct HMSpeechToTextAPIResponse: HMAPIResponseProtocol {

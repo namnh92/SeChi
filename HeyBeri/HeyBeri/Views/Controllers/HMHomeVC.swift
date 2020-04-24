@@ -21,7 +21,7 @@ class HMHomeVC: HMBaseVC {
     @IBOutlet weak var calendarIndicatorView: HMGradientView!
     
     // MARK: - Constants
-    private let pages: [HMBaseVC] = [HMReminderVC.create(), HMCalendarVC.create()]
+    private let pages: [HMBaseVC] = [HMReminderVC.create(), HMContactVC.create()]
     private let pageContainer = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
     // MARK: - Variables
@@ -49,6 +49,8 @@ class HMHomeVC: HMBaseVC {
         reminderIndicatorView.isHidden = true
         calendarIndicatorView.isHidden = true
         currentIndex = .reminder
+        addLeftNavigationBarbutton()
+        addRightNavigationBarbutton()
     }
     
     private func setUpPageContainer() {
@@ -60,11 +62,53 @@ class HMHomeVC: HMBaseVC {
         segmentedView.addSubview(pageContainer.view)
     }
 
+    private func addLeftNavigationBarbutton() {
+        let menuView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let menuButton = UIButton(frame: menuView.frame)
+        menuButton.addTarget(self, action: #selector(invokeMenuButton(_:)), for: .touchUpInside)
+        
+        let menuImageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 19, height: 16))
+        menuImageView.image = UIImage(named: "icon_menu")
+        menuView.addSubview(menuImageView)
+        menuView.addSubview(menuButton)
+        let menuItem = UIBarButtonItem.init(customView: menuView)
+        
+        navigationItem.leftBarButtonItems = [menuItem]
+    }
+    
+    private func addRightNavigationBarbutton() {
+        let notifyView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let notifyButton = UIButton(frame: notifyView.frame)
+        notifyButton.addTarget(self, action: #selector(invokeNotifyButton(_:)), for: .touchUpInside)
+        
+        let notifyImageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 18, height: 21))
+        notifyImageView.image = UIImage(named: "icon_notify")
+        notifyView.addSubview(notifyImageView)
+        notifyView.addSubview(notifyButton)
+        let notifyItem = UIBarButtonItem.init(customView: notifyView)
+        
+        navigationItem.rightBarButtonItems = [notifyItem]
+    }
+    
+    @objc private func invokeMenuButton(_ sender: UIButton) {
+        
+    }
+    
+    @objc private func invokeNotifyButton(_ sender: UIButton) {
+        
+    }
+    
     @IBAction func invokeChangeTab(_ sender: UIButton) {
-        if currentIndex == .reminder {
-            currentIndex = .calendar
-        } else {
-            currentIndex = .reminder
-        }
+        currentIndex = MenuItem(rawValue: sender.tag)
+    }
+    
+    @IBAction func invokeAddReminder(_ sender: UIButton) {
+        let addReminderVC = HMAddReminderVC.create()
+        let nav = UINavigationController(rootViewController: addReminderVC)
+        let popupVC = HMPopUpViewController(contentController: nav, position: .bottom(0), popupWidth: HMSystemInfo.screenWidth, popupHeight: HMSystemInfo.screenHeight)
+        popupVC.backgroundAlpha = 0
+        popupVC.cornerRadius = 0
+        popupVC.shadowEnabled = false
+        present(popupVC, animated: true, completion: nil)
     }
 }

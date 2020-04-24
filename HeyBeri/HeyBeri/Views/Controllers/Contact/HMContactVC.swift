@@ -1,15 +1,15 @@
 //
-//  HMReminderVC.swift
+//  HMContactVC.swift
 //  HeyBeri
 //
-//  Created by NamNH on 4/24/20.
+//  Created by Nguyễn Nam on 4/25/20.
 //  Copyright © 2020 Hypertech Mobile. All rights reserved.
 //
 
 import UIKit
 
-class HMReminderVC: HMBaseVC {
-
+class HMContactVC: HMBaseVC {
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,10 +21,10 @@ class HMReminderVC: HMBaseVC {
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func setupView() {
         super.setupView()
         setupTableView()
@@ -32,8 +32,8 @@ class HMReminderVC: HMBaseVC {
     
     private func setupTableView() {
         tableView.set(delegateAndDataSource: self)
-        tableView.registerNibCellFor(type: HMReminderCell.self)
-        tableView.registerNibCellFor(type: HMReminderCollapseCell.self)
+        tableView.registerNibCellFor(type: HMContactHeaderCell.self)
+        tableView.registerNibCellFor(type: HMContactContentCell.self)
         tableView.separatorStyle = .none
         view.backgroundColor = UIColor(hex: "F0F4F8")
         tableView.backgroundColor = .clear
@@ -41,7 +41,7 @@ class HMReminderVC: HMBaseVC {
     }
 }
 
-extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
+extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return reminderList.keys.count
     }
@@ -70,13 +70,11 @@ extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.reusableCell(type: HMReminderCollapseCell.self) else { return UITableViewCell() }
-            cell.setBorder(isBorder: collapseSection.contains(indexPath.section))
+            guard let cell = tableView.reusableCell(type: HMContactHeaderCell.self) else { return UITableViewCell() }
             return cell
         } else {
-            guard let cell = tableView.reusableCell(type: HMReminderCell.self) else { return UITableViewCell() }
+            guard let cell = tableView.reusableCell(type: HMContactContentCell.self) else { return UITableViewCell() }
             let key = Array(reminderList.keys)[indexPath.section]
-            cell.setBorder(isBorder: indexPath.row == reminderList[key]?.count)
             return cell
         }
     }

@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         HMOneSignalNotificationService.shared.registerOneSignal(launchOptions: launchOptions)
         
         // config
+        settingNaviBarBG()
         
         // Init root viewcontroller
         let nav = UINavigationController(rootViewController: HMHomeVC.create())
@@ -61,6 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Private method
+    private func settingNaviBarBG() {
+        // Sets background to a blank/empty image
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        // Sets shadow (line below the bar) to a blank image
+        UINavigationBar.appearance().shadowImage = UIImage()
+        // Sets the translucent background color
+        UINavigationBar.appearance().backgroundColor = .clear
+        // Set translucent. (Default value is already true, so this can be removed if desired.)
+        if #available(iOS 11, *) {}
+        else {
+            UINavigationBar.appearance().isTranslucent = false
+        }
+    }
 }
 
 //MARK: - PKPushRegistryDelegate
