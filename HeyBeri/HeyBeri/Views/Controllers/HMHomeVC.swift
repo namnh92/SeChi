@@ -116,6 +116,7 @@ class HMHomeVC: HMBaseVC {
                 group.leave()
             }
             
+            group.enter()
             HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
                 print(response.day)
                 print(response.action)
