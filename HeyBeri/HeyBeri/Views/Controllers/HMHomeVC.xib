@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,13 +153,70 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMZ-J7-oWy">
                     <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKp-QD-s3F">
                     <rect key="frame" x="0.0" y="762" width="414" height="100"/>
-                    <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPW-xy-XqS">
+                            <rect key="frame" x="0.0" y="40" width="414" height="60"/>
+                            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="Hv2-DD-dQB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-1z-9UJ">
+                            <rect key="frame" x="167" y="0.0" width="80" height="80"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOR-ad-FWs" customClass="HMShadowView" customModule="HeyBeri" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.98823529409999999" green="0.79215686269999996" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="70u-Th-HRl"/>
+                                        <constraint firstAttribute="width" constant="60" id="tZ1-K8-PDx"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="30"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                            <color key="value" red="0.98823529409999999" green="0.79215686269999996" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.16" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="AOR-ad-FWs" firstAttribute="centerY" secondItem="hr3-1z-9UJ" secondAttribute="centerY" id="HYb-CX-tyG"/>
+                                <constraint firstAttribute="width" constant="80" id="hcN-UA-RWZ"/>
+                                <constraint firstItem="AOR-ad-FWs" firstAttribute="centerX" secondItem="hr3-1z-9UJ" secondAttribute="centerX" id="hgX-YF-tcT"/>
+                                <constraint firstAttribute="height" constant="80" id="rqk-C3-Vrf"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="40"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
                     <constraints>
+                        <constraint firstItem="hr3-1z-9UJ" firstAttribute="centerX" secondItem="gKp-QD-s3F" secondAttribute="centerX" id="130-AT-cMr"/>
+                        <constraint firstAttribute="trailing" secondItem="WPW-xy-XqS" secondAttribute="trailing" id="T7X-dP-5hQ"/>
                         <constraint firstAttribute="height" constant="100" id="VAy-VK-95K"/>
+                        <constraint firstItem="hr3-1z-9UJ" firstAttribute="top" secondItem="gKp-QD-s3F" secondAttribute="top" id="btq-kp-zec"/>
+                        <constraint firstItem="WPW-xy-XqS" firstAttribute="leading" secondItem="gKp-QD-s3F" secondAttribute="leading" id="tLH-ez-eOq"/>
+                        <constraint firstAttribute="bottom" secondItem="WPW-xy-XqS" secondAttribute="bottom" id="vHv-fh-fHq"/>
                     </constraints>
                 </view>
             </subviews>
