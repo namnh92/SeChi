@@ -37,10 +37,10 @@ class HMHomeVC: HMBaseVC {
     }
     
     // MARK: - Life cycles
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        HMOneSignalNotificationService.shared.sendPush()
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        HMOneSignalNotificationService.shared.sendPush()
+//    }
 
     override func setupView() {
         super.setupView()
