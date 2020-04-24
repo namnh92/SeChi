@@ -33,6 +33,7 @@
 	<string>This app want to access microphone to speech</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>remote-notification</string>
 		<string>voip</string>
 	</array>

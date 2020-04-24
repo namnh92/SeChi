@@ -34,7 +34,7 @@ class HMChatBotVC: HMBaseChatVC {
 
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        HMOneSignalNotificationService.shared.sendPush()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -59,6 +59,12 @@ class HMOneSignalNotificationService: NSObject {
             print("Error sending tags: \(error?.localizedDescription ?? "None")")
         }
     }
+    
+    func sendPush() {
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let userId = status.subscriptionStatus.userId
+        OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": [userId]])
+    }
 }
 
 extension HMOneSignalNotificationService: OSPermissionObserver {
