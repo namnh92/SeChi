@@ -32,3 +32,9 @@ target 'HeyBeri' do
   # Pods for HeyBeri
   shared_pods
 end
+
+target 'onesignalberi' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  pod 'OneSignal'
+  
+end

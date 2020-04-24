@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D4D80CA0BC317C48D7B4325 /* Pods_onesignalberi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */; };
 		CAB60CFE2452EE0500A3DC68 /* HMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */; };
 		CAB60CFF2452EE0500A3DC68 /* HMHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */; };
 		CAC7D08C24513246004DA2E1 /* HMRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */; };
@@ -49,6 +50,8 @@
 		CBA5AD752281ECEC003B43B6 /* HMAPIUIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5AD712281ECEC003B43B6 /* HMAPIUIAlert.swift */; };
 		CBA5AD782281ECEC003B43B6 /* HMAPIUIIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5AD722281ECEC003B43B6 /* HMAPIUIIndicator.swift */; };
 		CBA5AD7C2281ED68003B43B6 /* HMIndicatorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5AD792281ED67003B43B6 /* HMIndicatorViewer.swift */; };
+		CBC6AC8C24532D1B007CB1B9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AC8B24532D1B007CB1B9 /* NotificationService.swift */; };
+		CBC6AC9024532D1B007CB1B9 /* onesignalberi.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CBDC92B122F880870064C03C /* HMRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC92AE22F880870064C03C /* HMRealmService.swift */; };
 		E0CC4FC74A9444B626D97F0D /* Pods_HeyBeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */; };
 		ED1D6AF12303B5B600CD983E /* HMBaseChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6AEE2303B5B600CD983E /* HMBaseChatVC.swift */; };
@@ -123,9 +126,36 @@
 		F13EC47223D00ED900ACB91A /* HMBaseBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13EC46F23D00ED800ACB91A /* HMBaseBottomSheetVC.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CBC6AC8E24532D1B007CB1B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDAD9D072238AAF6006D8A5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBC6AC8824532D1B007CB1B9;
+			remoteInfo = onesignalberi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBC6AC9124532D1B007CB1B9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CBC6AC9024532D1B007CB1B9 /* onesignalberi.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		288B60A61DC2E5DE4B636516 /* Pods-Staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Staging.debug.xcconfig"; path = "Target Support Files/Pods-Staging/Pods-Staging.debug.xcconfig"; sourceTree = "<group>"; };
+		3C31547C026C415D80B8DF4F /* Pods-onesignalberi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-onesignalberi.debug.xcconfig"; path = "Target Support Files/Pods-onesignalberi/Pods-onesignalberi.debug.xcconfig"; sourceTree = "<group>"; };
+		3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_onesignalberi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeyBeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-onesignalberi.release.xcconfig"; path = "Target Support Files/Pods-onesignalberi/Pods-onesignalberi.release.xcconfig"; sourceTree = "<group>"; };
 		754D26097AEB6B35C9FBED33 /* Pods-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.release.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.release.xcconfig"; sourceTree = "<group>"; };
 		88A5B51BF90ECABD85AACEA6 /* Pods_Develop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Develop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD0B56740BF2B495A1FE111 /* Pods_Staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Staging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +206,9 @@
 		CBA5AD712281ECEC003B43B6 /* HMAPIUIAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAPIUIAlert.swift; sourceTree = "<group>"; };
 		CBA5AD722281ECEC003B43B6 /* HMAPIUIIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAPIUIIndicator.swift; sourceTree = "<group>"; };
 		CBA5AD792281ED67003B43B6 /* HMIndicatorViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMIndicatorViewer.swift; sourceTree = "<group>"; };
+		CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = onesignalberi.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC6AC8B24532D1B007CB1B9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		CBC6AC8D24532D1B007CB1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDC92AE22F880870064C03C /* HMRealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMRealmService.swift; sourceTree = "<group>"; };
 		D3D54DDFEEB860A031F458FD /* Pods-HeyBeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.debug.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.debug.xcconfig"; sourceTree = "<group>"; };
 		D6C4A1F82E6FA9EA173FC72B /* Pods-Develop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.debug.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +288,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CBC6AC8624532D1B007CB1B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4D80CA0BC317C48D7B4325 /* Pods_onesignalberi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDAD9DC12238B5B8006D8A5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,6 +319,7 @@
 				88A5B51BF90ECABD85AACEA6 /* Pods_Develop.framework */,
 				8FD0B56740BF2B495A1FE111 /* Pods_Staging.framework */,
 				42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */,
+				3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -438,6 +480,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		CBC6AC8A24532D1B007CB1B9 /* onesignalberi */ = {
+			isa = PBXGroup;
+			children = (
+				CBC6AC8B24532D1B007CB1B9 /* NotificationService.swift */,
+				CBC6AC8D24532D1B007CB1B9 /* Info.plist */,
+			);
+			path = onesignalberi;
+			sourceTree = "<group>";
+		};
 		CBC8896122FC6F1D0067BB44 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +515,8 @@
 				A9564E4D8EDDEB92173DA5C9 /* Pods-Staging.release.xcconfig */,
 				D3D54DDFEEB860A031F458FD /* Pods-HeyBeri.debug.xcconfig */,
 				E67B7C33E2F56F48374DB3CC /* Pods-HeyBeri.release.xcconfig */,
+				3C31547C026C415D80B8DF4F /* Pods-onesignalberi.debug.xcconfig */,
+				58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -618,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				EDAD9D112238AAF6006D8A5C /* HeyBeri */,
+				CBC6AC8A24532D1B007CB1B9 /* onesignalberi */,
 				EDAD9D102238AAF6006D8A5C /* Products */,
 				EB30495CC7C1EBEB3A06013E /* Pods */,
 				55CC3DDA40FBBE960D59F84C /* Frameworks */,
@@ -628,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				EDAD9DCB2238B5B8006D8A5C /* HeyBeri.app */,
+				CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -814,6 +869,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CBC6AC8824532D1B007CB1B9 /* onesignalberi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBC6AC9424532D1B007CB1B9 /* Build configuration list for PBXNativeTarget "onesignalberi" */;
+			buildPhases = (
+				4DB76EA11887CE6DFCF9999F /* [CP] Check Pods Manifest.lock */,
+				CBC6AC8524532D1B007CB1B9 /* Sources */,
+				CBC6AC8624532D1B007CB1B9 /* Frameworks */,
+				CBC6AC8724532D1B007CB1B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = onesignalberi;
+			productName = onesignalberi;
+			productReference = CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EDAD9DAB2238B5B8006D8A5C /* HeyBeri */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDAD9DC82238B5B8006D8A5C /* Build configuration list for PBXNativeTarget "HeyBeri" */;
@@ -823,10 +896,12 @@
 				EDAD9DC12238B5B8006D8A5C /* Frameworks */,
 				EDAD9DC32238B5B8006D8A5C /* Resources */,
 				5468B552924955FCB3333746 /* [CP] Embed Pods Frameworks */,
+				CBC6AC9124532D1B007CB1B9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CBC6AC8F24532D1B007CB1B9 /* PBXTargetDependency */,
 			);
 			name = HeyBeri;
 			productName = ProjectBase;
@@ -840,10 +915,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HM;
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Hypertech Mobile";
 				TargetAttributes = {
+					CBC6AC8824532D1B007CB1B9 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					EDAD9DAB2238B5B8006D8A5C = {
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -868,11 +946,19 @@
 			projectRoot = "";
 			targets = (
 				EDAD9DAB2238B5B8006D8A5C /* HeyBeri */,
+				CBC6AC8824532D1B007CB1B9 /* onesignalberi */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CBC6AC8724532D1B007CB1B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDAD9DC32238B5B8006D8A5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -910,6 +996,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4DB76EA11887CE6DFCF9999F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-onesignalberi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5468B552924955FCB3333746 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -952,6 +1060,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CBC6AC8524532D1B007CB1B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBC6AC8C24532D1B007CB1B9 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDAD9DAD2238B5B8006D8A5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1044,6 +1160,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CBC6AC8F24532D1B007CB1B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBC6AC8824532D1B007CB1B9 /* onesignalberi */;
+			targetProxy = CBC6AC8E24532D1B007CB1B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		EDAD9D1E2238AAF8006D8A5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1064,6 +1188,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CBC6AC9224532D1B007CB1B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C31547C026C415D80B8DF4F /* Pods-onesignalberi.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XQA7U4DS6;
+				INFOPLIST_FILE = onesignalberi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi.onesignalberi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CBC6AC9324532D1B007CB1B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7XQA7U4DS6;
+				INFOPLIST_FILE = onesignalberi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi.onesignalberi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EDAD9D382238AAF8006D8A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1240,6 +1410,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CBC6AC9424532D1B007CB1B9 /* Build configuration list for PBXNativeTarget "onesignalberi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBC6AC9224532D1B007CB1B9 /* Debug */,
+				CBC6AC9324532D1B007CB1B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EDAD9D0A2238AAF6006D8A5C /* Build configuration list for PBXProject "HeyBeri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
