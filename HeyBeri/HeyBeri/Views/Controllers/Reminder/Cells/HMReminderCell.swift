@@ -15,7 +15,7 @@ protocol HMReminderCellDelegate: class {
 
 class HMReminderCell: UITableViewCell {
     
-    @IBOutlet weak var backView: HMShadowView!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var topView: UIView!
     
     weak var delegate: HMReminderCellDelegate?
@@ -44,17 +44,16 @@ class HMReminderCell: UITableViewCell {
             break
         case .changed:
             topView.frame = CGRect(x: p.x, y: topFrame.origin.y, width: topFrame.size.width, height: topFrame.size.height)
-            if recognizer.velocity(in: self).x < 0 {
-                backView.fillColor = .yellow
+            if topView.frame.origin.x < 10 {
+                backView.backgroundColor = .yellow
             } else {
-                backView.fillColor = .blue
+                backView.backgroundColor = .blue
             }
         case .ended:
             print("State: \(recognizer.velocity(in: self).x)")
-            if recognizer.velocity(in: self).x <
-                -HMSystemInfo.screenWidth/2 {
+            if recognizer.velocity(in: self).x < -500 {
                 delegate?.swipeToDelete(at: self)
-            } else if recognizer.velocity(in: self).x > HMSystemInfo.screenWidth/2 {
+            } else if recognizer.velocity(in: self).x > 500 {
                 delegate?.swipeToComplete(at: self)
             } else {
                 UIView.animate(withDuration: 0.2, animations: {

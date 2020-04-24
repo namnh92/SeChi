@@ -15,8 +15,8 @@ class HMReminderVC: HMBaseVC {
     
     // MARK: - Variables
     private var collapseSection: [Int] = [0]
-    private var daysList: [String] = ["",""]
-    private var reminderByDayList: [String] = ["","",""]
+    private var reminderList: [String:[String]] = ["Ngày 1": ["Việc 1","Việc 2"],
+                                                   "Ngày 2": ["Việc 3","Việc 4"]]
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -39,13 +39,15 @@ class HMReminderVC: HMBaseVC {
 
 extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return daysList.count
+        return reminderList.keys.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var numberOfRow = 1
         if collapseSection.contains(section) {
-            return reminderByDayList.count
-        } else { return 1 }
+            let key = Array(reminderList.keys)[section]
+            return numberOfRow + (reminderList[key]?.count ?? 0)
+        } else { return numberOfRow }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,9 +70,19 @@ extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
 extension HMReminderVC: HMReminderCellDelegate {
     func swipeToComplete(at cell: HMReminderCell) {
         // Remove reminderByDayList
+        if let index = tableView.indexPath(for: cell) {
+            let key = Array(reminderList.keys)[index.section]
+            reminderList[key]?.remove(at: index.row - 1)
+            tableView.reloadSectionAt(index: index.section)
+        }
     }
     
     func swipeToDelete(at cell: HMReminderCell) {
         // Remove reminderByDayList
+        if let index = tableView.indexPath(for: cell) {
+            let key = Array(reminderList.keys)[index.section]
+            reminderList[key]?.remove(at: index.row - 1)
+            tableView.reloadSectionAt(index: index.section)
+        }
     }
 }
