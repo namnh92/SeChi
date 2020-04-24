@@ -11,6 +11,6 @@ import UIKit
 class HMConstants {
     static let chatBotToken = "a3651a25d3ed1d9e2f7603b765ceff6e"
     static let speechToTextAPIKey = "31zMkJ2X6jnX00bpvBSVqM7z10NvP1Ty"
-    static let viettelSpeechToTextAPIKey = "p4smb1oEvM8JOyxnTTdopu6s9Jx8CsorvGcpSIsHoG-3wGwiw0uVL2LfbOagvKso"
+    static let viettelSpeechToTextAPIKey = "TOieMFVhIYKwAtj-EyKpJapV5LoO8Td6Xpn-soGNzzOkhOnigeyiWVbMlYDZ3MdQ"
     static let oneSignalAPIKey = "3923864c-d8ad-4fcd-9fb1-941f45923898"
 }

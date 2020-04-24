@@ -19,6 +19,7 @@ class HMHomeVC: HMBaseVC {
     @IBOutlet weak var segmentedView: UIView!
     @IBOutlet weak var reminderIndicatorView: HMGradientView!
     @IBOutlet weak var calendarIndicatorView: HMGradientView!
+    @IBOutlet weak var addReminderButton: UIButton!
     
     // MARK: - Constants
     private let pages: [HMBaseVC] = [HMReminderVC.create(), HMContactVC.create()]
@@ -104,11 +105,11 @@ class HMHomeVC: HMBaseVC {
     
     @IBAction func invokeAddReminder(_ sender: UIButton) {
         let addReminderVC = HMAddReminderVC.create()
-        let nav = UINavigationController(rootViewController: addReminderVC)
-        let popupVC = HMPopUpViewController(contentController: nav, position: .bottom(0), popupWidth: HMSystemInfo.screenWidth, popupHeight: HMSystemInfo.screenHeight)
-        popupVC.backgroundAlpha = 0
-        popupVC.cornerRadius = 0
-        popupVC.shadowEnabled = false
-        present(popupVC, animated: true, completion: nil)
+        addReminderVC.modalPresentationStyle = .overCurrentContext
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.subtype = CATransitionSubtype.fromTop
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(addReminderVC, animated: true, completion: nil)
     }
 }

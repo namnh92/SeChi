@@ -23,10 +23,14 @@ class HMAddReminderVC: HMBaseVC {
         super.setupView()
         
         HMSpeechRecognitionService.instance.didReceiveMessages = { [weak self] messages in
-            self?.inputTF.text = messages[0]
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
-                HMSpeechRecognitionService.instance.startRecording()
-            })
+            if messages.count > 0 {
+                self?.inputTF.text = messages[0]
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                    self?.dismissToRoot()
+                })
+            } else {
+//                HMSpeechRecognitionService.instance.startRecording()
+            }
         }
         
         HMSpeechRecognitionService.instance.didGetDecibel = { [weak self] decibel in
