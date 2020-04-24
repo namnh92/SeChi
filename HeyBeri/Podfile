@@ -16,14 +16,14 @@ def shared_pods
   # Pod Keyboard
   pod 'IQKeyboardManagerSwift'
   
-  # Pod Notification
-  pod 'Firebase/Messaging'
-  
   # Pod Socket
   pod 'Socket.IO-Client-Swift'
   
   # Pod Message Kit
   pod 'MessageKit'
+  
+  # Pod Notification
+  pod 'OneSignal'
 end
 
 target 'HeyBeri' do

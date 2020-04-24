@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import Firebase
+import PushKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,15 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Firebase cloud message
-        Messaging.messaging().delegate = self
-        
         // Config iqkeyboard
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
+        HMNotificationServices.instance.registerPushNotification()
+        HMOneSignalNotificationService.shared.registerOneSignal(launchOptions: launchOptions)
+        
         // config
+        voipRegistration()
         settingNaviBarBG()
         settingTabBarBG()
         
@@ -83,28 +84,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //            UITabBar.appearance().isTranslucent = false
         }
     }
+    
+    private func voipRegistration() {
+        // Create a push registry object
+        let mainQueue = DispatchQueue.main
+        let voipRegistry: PKPushRegistry = PKPushRegistry(queue: mainQueue)
+        voipRegistry.delegate = self
+        voipRegistry.desiredPushTypes = [PKPushType.voIP]
+    }
 }
 
-// MARK: - Notification handle
-extension AppDelegate : MessagingDelegate {
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        HMNotificationServices.instance.parseDeviceToken(data: deviceToken)
-    }
+//MARK: - PKPushRegistryDelegate
+extension AppDelegate : PKPushRegistryDelegate {
     
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        HMNotificationServices.instance.received(notification: userInfo, application: application, isRemoteNoti: false)
+    // Handle updated push credentials
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
+        print(credentials.token)
+        let deviceToken = credentials.token.map { String(format: "%02x", $0) }.joined()
+        print("pushRegistry -> deviceToken :\(deviceToken)")
     }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        HMNotificationServices.instance.received(notification: userInfo, application: application, isRemoteNoti: true)
-    }
-    
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        HMNotificationServices.instance.sendTokenToServer(token: fcmToken, servicesType: .FCM)
-    }
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         
+    func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
+        print("pushRegistry:didInvalidatePushTokenForType:")
+    }
+    
+    // Handle incoming pushes
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> Void) {
+         print(payload.dictionaryPayload)
     }
 }

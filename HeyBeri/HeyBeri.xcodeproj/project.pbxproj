@@ -17,6 +17,10 @@
 		CAC7D09E245181AB004DA2E1 /* HMSoundWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D09D245181AB004DA2E1 /* HMSoundWaveView.swift */; };
 		CAC7D0A0245181C7004DA2E1 /* HMSoundWaveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC7D09F245181C7004DA2E1 /* HMSoundWaveView.xib */; };
 		CAC7D0A624519B8C004DA2E1 /* HMSharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D0A524519B8C004DA2E1 /* HMSharedData.swift */; };
+		CAC7D0AA245288B1004DA2E1 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC7D0A9245288B1004DA2E1 /* PushKit.framework */; };
+		CAC7D0AC24529817004DA2E1 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC7D0AB24529817004DA2E1 /* CallKit.framework */; };
+		CAC7D0AE24529826004DA2E1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC7D0AD24529826004DA2E1 /* UserNotifications.framework */; };
+		CAC7D0B024529B24004DA2E1 /* HMOneSignalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D0AF24529B24004DA2E1 /* HMOneSignalNotificationService.swift */; };
 		CB58A48022ACFE8000F35564 /* HMWebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */; };
 		CB58A48322ACFE8000F35564 /* HMSocketIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */; };
 		CB58A48622ACFE8000F35564 /* HMSocketConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */; };
@@ -129,6 +133,10 @@
 		CAC7D09F245181C7004DA2E1 /* HMSoundWaveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMSoundWaveView.xib; sourceTree = "<group>"; };
 		CAC7D0A524519B8C004DA2E1 /* HMSharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSharedData.swift; sourceTree = "<group>"; };
 		CAC7D0A824528317004DA2E1 /* HeyBeri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyBeri.entitlements; sourceTree = "<group>"; };
+		CAC7D0A9245288B1004DA2E1 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		CAC7D0AB24529817004DA2E1 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		CAC7D0AD24529826004DA2E1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		CAC7D0AF24529B24004DA2E1 /* HMOneSignalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMOneSignalNotificationService.swift; sourceTree = "<group>"; };
 		CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMWebSocketService.swift; sourceTree = "<group>"; };
 		CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketIOService.swift; sourceTree = "<group>"; };
 		CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketConfiguration.swift; sourceTree = "<group>"; };
@@ -231,6 +239,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC7D0AE24529826004DA2E1 /* UserNotifications.framework in Frameworks */,
+				CAC7D0AC24529817004DA2E1 /* CallKit.framework in Frameworks */,
+				CAC7D0AA245288B1004DA2E1 /* PushKit.framework in Frameworks */,
 				E0CC4FC74A9444B626D97F0D /* Pods_HeyBeri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +252,9 @@
 		55CC3DDA40FBBE960D59F84C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAC7D0AD24529826004DA2E1 /* UserNotifications.framework */,
+				CAC7D0AB24529817004DA2E1 /* CallKit.framework */,
+				CAC7D0A9245288B1004DA2E1 /* PushKit.framework */,
 				88A5B51BF90ECABD85AACEA6 /* Pods_Develop.framework */,
 				8FD0B56740BF2B495A1FE111 /* Pods_Staging.framework */,
 				42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */,
@@ -462,6 +476,7 @@
 		ED5DC1BC225D8BA8005D8A6E /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				CAC7D0AF24529B24004DA2E1 /* HMOneSignalNotificationService.swift */,
 				ED5DC1BD225D8BCC005D8A6E /* HMNotificationServices.swift */,
 			);
 			path = Notification;
@@ -904,6 +919,7 @@
 				CB863567225BAF4C0081CB75 /* HMBaseVC.swift in Sources */,
 				CBA5AD752281ECEC003B43B6 /* HMAPIUIAlert.swift in Sources */,
 				CB863550225BA7FA0081CB75 /* HMCornerView.swift in Sources */,
+				CAC7D0B024529B24004DA2E1 /* HMOneSignalNotificationService.swift in Sources */,
 				ED70DBB222E6F0E7003A591A /* HMSlider.swift in Sources */,
 				CB86356A225BAF520081CB75 /* HMNavigationController.swift in Sources */,
 				ED412AAB22E6B9C1008B802D /* HMCheckBoxButton.swift in Sources */,
