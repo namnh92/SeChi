@@ -52,6 +52,7 @@
 		CBA5AD7C2281ED68003B43B6 /* HMIndicatorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA5AD792281ED67003B43B6 /* HMIndicatorViewer.swift */; };
 		CBC6AC8C24532D1B007CB1B9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AC8B24532D1B007CB1B9 /* NotificationService.swift */; };
 		CBC6AC9024532D1B007CB1B9 /* onesignalberi.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CBC6AC9624533DE9007CB1B9 /* maybe-next-time.wav in Resources */ = {isa = PBXBuildFile; fileRef = CBC6AC9524533DE9007CB1B9 /* maybe-next-time.wav */; };
 		CBDC92B122F880870064C03C /* HMRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC92AE22F880870064C03C /* HMRealmService.swift */; };
 		E0CC4FC74A9444B626D97F0D /* Pods_HeyBeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */; };
 		ED1D6AF12303B5B600CD983E /* HMBaseChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6AEE2303B5B600CD983E /* HMBaseChatVC.swift */; };
@@ -209,6 +210,7 @@
 		CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = onesignalberi.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC6AC8B24532D1B007CB1B9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		CBC6AC8D24532D1B007CB1B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC6AC9524533DE9007CB1B9 /* maybe-next-time.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "maybe-next-time.wav"; sourceTree = "<group>"; };
 		CBDC92AE22F880870064C03C /* HMRealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMRealmService.swift; sourceTree = "<group>"; };
 		D3D54DDFEEB860A031F458FD /* Pods-HeyBeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.debug.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.debug.xcconfig"; sourceTree = "<group>"; };
 		D6C4A1F82E6FA9EA173FC72B /* Pods-Develop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.debug.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 		EDAD9D4A2238B2B8006D8A5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBC6AC9524533DE9007CB1B9 /* maybe-next-time.wav */,
 				E501A1E023605491002D1298 /* Info */,
 				EDB5E9E2230566E00002A43F /* Language */,
 				EDB5E9E1230566CF0002A43F /* Font */,
@@ -988,6 +991,7 @@
 				ED7384322317D08D0026435C /* Roboto_Specimen_Book.pdf in Resources */,
 				ED7384052317D08D0026435C /* Roboto-BlackItalic.ttf in Resources */,
 				EDAD9DC62238B5B8006D8A5C /* Assets.xcassets in Resources */,
+				CBC6AC9624533DE9007CB1B9 /* maybe-next-time.wav in Resources */,
 				CAEC3B782452FAEF0076DB66 /* HMReminderCell.xib in Resources */,
 				ED7384262317D08D0026435C /* Roboto-MediumItalic.ttf in Resources */,
 			);
@@ -1193,8 +1197,8 @@
 			baseConfigurationReference = 3C31547C026C415D80B8DF4F /* Pods-onesignalberi.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7XQA7U4DS6;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = onesignalberi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1205,6 +1209,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi.onesignalberi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1216,8 +1221,8 @@
 			baseConfigurationReference = 58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7XQA7U4DS6;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = onesignalberi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1228,6 +1233,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi.onesignalberi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

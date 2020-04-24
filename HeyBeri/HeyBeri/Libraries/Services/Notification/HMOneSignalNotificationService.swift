@@ -63,7 +63,11 @@ class HMOneSignalNotificationService: NSObject {
     func sendPush() {
         let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
         let userId = status.subscriptionStatus.userId
-        OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": [userId]])
+        OneSignal.postNotification(["contents": ["en": "Test Message"],
+                                    "include_player_ids": [userId],
+                                    "buttons": [["id": "id1", "text": "button1", "icon": "ic_menu_share"]
+                                        , ["id": "id2", "text": "button2", "icon": "ic_menu_send"]],
+                                    "ios_sound": "maybe-next-time.wav"])
     }
 }
 
