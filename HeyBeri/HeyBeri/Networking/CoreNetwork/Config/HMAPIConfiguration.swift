@@ -37,6 +37,10 @@ class HMAPIConfiguration {
         return "https://viettelgroup.ai/voice/api"
     }
     
+    static var viettelAINLPURL: String {
+        return "https://viettelgroup.ai/nlp/api/v1"
+    }
+    
     static var httpSpeechToTextHeader: HTTPHeaders {
         return ["token": HMConstants.viettelSpeechToTextAPIKey]
     }

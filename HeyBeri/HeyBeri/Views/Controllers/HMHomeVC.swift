@@ -105,6 +105,29 @@ class HMHomeVC: HMBaseVC {
     
     @IBAction func invokeAddReminder(_ sender: UIButton) {
         let addReminderVC = HMAddReminderVC.create()
+        addReminderVC.didAddReminder = { [weak self] message in
+            guard let sSelf = self else { return }
+            let group = DispatchGroup()
+            group.enter()
+            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
+                print(response.time)
+                group.leave()
+            }) { (error) in
+                group.leave()
+            }
+            
+            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
+                print(response.day)
+                print(response.action)
+                group.leave()
+            }) { (error) in
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
+                // Do Add DB
+            }
+        }
         addReminderVC.modalPresentationStyle = .overCurrentContext
         let transition = CATransition()
         transition.duration = 0.5
