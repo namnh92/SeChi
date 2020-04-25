@@ -93,7 +93,7 @@ extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
             let key = Array(reminderList.keys)[indexPath.section]
             if let reminderListByDate = reminderList[key] {
                 cell.setBorder(isBorder: indexPath.row == reminderListByDate.count)
-                cell.model = reminderListByDate[indexPath.row]
+                cell.model = reminderListByDate[indexPath.row - 1]
                 return cell
             } else { return UITableViewCell() }
         }
