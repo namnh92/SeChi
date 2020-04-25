@@ -12,6 +12,7 @@ class HMContactVC: HMBaseVC {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableHeaderView: UIView!
     
     // MARK: - Variables
     private var collapseSection: [Int] = [0]
@@ -32,6 +33,7 @@ class HMContactVC: HMBaseVC {
     
     private func setupTableView() {
         tableView.set(delegateAndDataSource: self)
+        tableView.tableHeaderView = tableHeaderView
         tableView.registerNibCellFor(type: HMContactHeaderCell.self)
         tableView.registerNibCellFor(type: HMContactContentCell.self)
         tableView.separatorStyle = .none
