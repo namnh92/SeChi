@@ -17,8 +17,24 @@ class HMAddReminderVC: HMBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupSocket()
         HMSpeechRecognitionService.instance.startRecording()
+    }
+    
+    private func setupSocket() {
+        HMWebSocketService.instance.connectSocket()
+        
+        // Handle Socket connected
+        HMWebSocketService.instance.didConnect = {
+        }
+        
+        // Handle Socket disconnected
+        HMWebSocketService.instance.didDisconnect = { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                self?.didAddReminder?(self?.inputTF.text)
+                self?.dismissToRoot()
+            })
+        }
     }
 
     override func setupView() {
@@ -27,10 +43,6 @@ class HMAddReminderVC: HMBaseVC {
         HMSpeechRecognitionService.instance.didReceiveMessages = { [weak self] messages in
             if messages.count > 0 {
                 self?.inputTF.text = messages[0]
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    self?.didAddReminder?(self?.inputTF.text)
-                    self?.dismissToRoot()
-                })
             } else {
 //                HMSpeechRecognitionService.instance.startRecording()
             }

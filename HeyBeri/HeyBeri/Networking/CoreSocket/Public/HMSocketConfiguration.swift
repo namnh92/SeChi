@@ -19,7 +19,7 @@ class HMSocketConfiguration {
             clientId = generateClientId()
             HMSharedData.chatBotSenderId = clientId
         }
-        return "wss://viettelgroup.ai/voice/api/asr/v1/ws/decode_online"
+        return "wss://viettelgroup.ai/voice/api/asr/v1/ws/decode_online?content-type=audio/x-raw,+layout=(string)interleaved,+rate=(int)16000,+format=(string)S16LE,+channels=(int)1&token=\(HMConstants.viettelSpeechToTextAPIKey)"
     }
     
     static var httpUrl: String {

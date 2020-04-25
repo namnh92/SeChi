@@ -55,6 +55,6 @@ class HMChatService {
     
     func sendMessage(parameters: [String: String]) {
         guard HMWebSocketService.instance.isSocketConnected() else { return }
-        HMWebSocketService.instance.send(name: parameters["content"]!)
+//        HMWebSocketService.instance.send(name: parameters["content"]!)
     }
 }
