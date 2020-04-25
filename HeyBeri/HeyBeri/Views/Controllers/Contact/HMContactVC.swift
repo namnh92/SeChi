@@ -69,11 +69,13 @@ class HMContactVC: HMBaseVC {
     }
     
     private func getContact() {
-        listContact = HMRealmService.instance.load(listOf: HMContactModel.self)
+        listContact = HMRealmService.instance.load(listOf: HMContactModel.self).sorted(by: {
+            $0.id < $1.id
+        })
     }
     
     private func getData(by contact: HMContactModel) -> [TaskReminder] {
-        return HMRealmService.instance.load(listOf: TaskReminder.self).filter({ $0.supporter == contact })
+        return HMRealmService.instance.load(listOf: TaskReminder.self).filter({ $0.supporter != nil && $0.supporter!.id == contact.id })
     }
 }
 
