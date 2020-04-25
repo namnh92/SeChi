@@ -12,10 +12,16 @@ class HMReminderCollapseCell: UITableViewCell {
 
     @IBOutlet weak var backView: HMCornerView!
     @IBOutlet weak var taskDateLB: UILabel!
+    @IBOutlet weak var numberTaskLB: HMInsetLabel!
     
     var taskDate: String? {
         didSet {
             taskDateLB.text = taskDate
+        }
+    }
+    var numberTask: String? {
+        didSet {
+            numberTaskLB.text = numberTask
         }
     }
     

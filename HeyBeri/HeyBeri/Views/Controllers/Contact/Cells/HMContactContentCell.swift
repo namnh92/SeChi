@@ -25,6 +25,11 @@ class HMContactContentCell: UITableViewCell {
                     taskDetailLB.text = model.taskName
                 }
                 checkBoxButton.isChecked = model.typeTask == .supportCompleted
+                checkBoxButton.didCheck = { isChecked in
+                    if isChecked {
+                        HMOneSignalNotificationService.shared.sendPushOnOtherSide(objName: "", objMessage: "")
+                    }
+                }
             }
         }
     }
@@ -32,12 +37,6 @@ class HMContactContentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

@@ -69,7 +69,18 @@ class HMOneSignalNotificationService: NSObject {
                                     "include_player_ids": [userId],
                                     "buttons": [["id": "id1", "text": "Đồng Ý"]
                                         , ["id": "id2", "text": "Từ Chối"]
-                                        , ["id": "id3", "text": "Nhờ Trợ Giúp"]],                             "ios_sound": "maybe-next-time.wav"])
+                                        , ["id": "id3", "text": "Nhờ Trợ Giúp"]],
+                                    "ios_sound": "maybe-next-time.wav"])
+    }
+    
+    func sendHelpPush(objTask: String) {
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let userId = status.subscriptionStatus.userId
+        OneSignal.postNotification(["contents": ["en": #"\#(objTask)"#],
+                                    "include_player_ids": [userId],
+                                    "buttons": [["id": "id1", "text": "Đồng Ý"]
+                                        , ["id": "id2", "text": "Từ Chối"]],
+                                    "ios_sound": "maybe-next-time.wav"])
     }
     
     func sendPushOnOtherSide(objName: String, objMessage: String) {

@@ -35,10 +35,13 @@ class HMHomeVC: HMBaseVC {
                 pageContainer.setViewControllers([pages[currentIndex.rawValue]], direction: direction, animated: true, completion: nil)
                 if let vc =  pages[MenuItem.contact.rawValue] as? HMContactVC {
                     vc.isFromPush = isFromPush
+                    vc.taskId = taskId
+                    isFromPush = false
                 }
             }
         }
     }
+    var taskId: Int = 0
     var isFromPush: Bool = false
     var time: String?
     var date: String?

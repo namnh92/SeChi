@@ -18,6 +18,7 @@ class HMContactVC: HMBaseVC {
     private let contactNames = ["Chồng Béo", "Chị Ti <3", "Người phụ nữ vĩ đại", "Bố ơi giúp con với"]
     // MARK: - Variables
     var isFromPush: Bool = false
+    var taskId: Int = 0
     private var collapseSection: [Int] = []
     private var listContact: [HMContactModel] = [] {
         didSet {
@@ -120,6 +121,13 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFromPush {
+            HMOneSignalNotificationService.shared.sendHelpPush(objTask: "Hãy giúp tôi")
+            HMRealmService.instance.write { (realm) in
+                let task = TaskReminder()
+                task.id = taskId
+                task.supporter = listContact[indexPath.row]
+                realm.add(task, update: .all)
+            }
             return
         }
         if indexPath.row == 0 {

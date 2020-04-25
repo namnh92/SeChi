@@ -203,7 +203,8 @@ extension HMNotificationServices {
             case "help":
                 let home = HMHomeVC.create()
                 home.isFromPush = true
-                let nav = UINavigationController(rootViewController: HMHomeVC.create())
+                home.taskId = userInfo["taskId"] as! Int
+                let nav = UINavigationController(rootViewController: home)
                 var window = application.keyWindow
                 HMSystemBoots.instance.changeRoot(window: &window, rootController: nav)
             default:

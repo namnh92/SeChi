@@ -29,9 +29,9 @@ class HMReminderService: NSObject {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest.init(identifier: "reminderLocal", content: content, trigger: trigger)
         
-        let acceptAction = UNNotificationAction(identifier: "accept", title: "Đồng ý", options: [])
+        let acceptAction = UNNotificationAction(identifier: "accept", title: "Đồng ý", options: [.foreground])
         let deleteAction = UNNotificationAction(identifier: "delete", title: "Từ chối", options: [.destructive])
-        let helpAction = UNNotificationAction(identifier: "help", title: "Nhờ trợ giúp", options: [])
+        let helpAction = UNNotificationAction(identifier: "help", title: "Nhờ trợ giúp", options: [.foreground])
         let category = UNNotificationCategory(identifier: "reminderLocal", actions: [acceptAction, deleteAction, helpAction], intentIdentifiers: [], options: [])
         // Schedule the notification.
         let center = UNUserNotificationCenter.current()

@@ -87,6 +87,12 @@ extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.reusableCell(type: HMReminderCollapseCell.self) else { return UITableViewCell() }
             cell.setBorder(isBorder: collapseSection.contains(indexPath.section))
             cell.taskDate = Array(reminderList.keys)[indexPath.section]
+            let key = Array(reminderList.keys)[indexPath.section]
+            if let reminderListByDate = reminderList[key] {
+                cell.numberTask = "\(reminderListByDate.count)"
+            } else {
+                cell.numberTask = "0"
+            }
             return cell
         } else {
             guard let cell = tableView.reusableCell(type: HMReminderCell.self) else { return UITableViewCell() }
