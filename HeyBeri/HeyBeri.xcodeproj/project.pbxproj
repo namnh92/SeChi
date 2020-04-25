@@ -11,9 +11,7 @@
 		5D4D80CA0BC317C48D7B4325 /* Pods_onesignalberi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */; };
 		CAB60CFE2452EE0500A3DC68 /* HMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */; };
 		CAB60CFF2452EE0500A3DC68 /* HMHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */; };
-		CAC7D08C24513246004DA2E1 /* HMRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */; };
 		CAC7D08E2451355C004DA2E1 /* ChatContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08D2451355C004DA2E1 /* ChatContentViewModel.swift */; };
-		CAC7D0912451456F004DA2E1 /* HMChatBotVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */; };
 		CAC7D09424517769004DA2E1 /* HMChatBotAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D09324517768004DA2E1 /* HMChatBotAPI.swift */; };
 		CAC7D09624517AE2004DA2E1 /* HMSpeechToTextAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D09524517AE2004DA2E1 /* HMSpeechToTextAPI.swift */; };
 		CAC7D09824517CEB004DA2E1 /* HMSpeechRecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7D09724517CEB004DA2E1 /* HMSpeechRecognitionService.swift */; };
@@ -47,6 +45,7 @@
 		CB6A11C12453799900833C8E /* HMReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6A11BF2453799900833C8E /* HMReminderCell.xib */; };
 		CB793EAD225CEA720003C51B /* HMGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB793EAA225CEA720003C51B /* HMGradientButton.swift */; };
 		CB7AD7172453FE2400437AC5 /* HMContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD7162453FE2400437AC5 /* HMContactModel.swift */; };
+		CB7AD71924544C5300437AC5 /* HMReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD71824544C5300437AC5 /* HMReminderService.swift */; };
 		CB863542225BA7070081CB75 /* HMSystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86353F225BA7070081CB75 /* HMSystemInfo.swift */; };
 		CB863550225BA7FA0081CB75 /* HMCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86354D225BA7FA0081CB75 /* HMCornerView.swift */; };
 		CB863554225BA8230081CB75 /* HMGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863551225BA8230081CB75 /* HMGradientView.swift */; };
@@ -67,9 +66,6 @@
 		CBC6AC9A2453503D007CB1B9 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AC992453503D007CB1B9 /* Dictionary+Extension.swift */; };
 		CBDC92B122F880870064C03C /* HMRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC92AE22F880870064C03C /* HMRealmService.swift */; };
 		E0CC4FC74A9444B626D97F0D /* Pods_HeyBeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */; };
-		ED1D6AF12303B5B600CD983E /* HMBaseChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6AEE2303B5B600CD983E /* HMBaseChatVC.swift */; };
-		ED1D6AF62303B6BA00CD983E /* HMBaseAudioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6AF32303B6BA00CD983E /* HMBaseAudioVC.swift */; };
-		ED1D6AFA2303B7C000CD983E /* HMChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6AF72303B7C000CD983E /* HMChatService.swift */; };
 		ED412A2222E56B42008B802D /* HMAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED412A1F22E56B42008B802D /* HMAPIConfiguration.swift */; };
 		ED412A2422E56B4A008B802D /* HMSystemBoots.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86356D225BAFD50081CB75 /* HMSystemBoots.swift */; };
 		ED412A9E22E6B9A4008B802D /* HMPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED412A9A22E6B9A4008B802D /* HMPermission.swift */; };
@@ -178,9 +174,7 @@
 		C8DC8BC93A399167AEFC2347 /* Pods-Develop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.release.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.release.xcconfig"; sourceTree = "<group>"; };
 		CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMHomeVC.swift; sourceTree = "<group>"; };
 		CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMHomeVC.xib; sourceTree = "<group>"; };
-		CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMRootTabBarController.swift; sourceTree = "<group>"; };
 		CAC7D08D2451355C004DA2E1 /* ChatContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentViewModel.swift; sourceTree = "<group>"; };
-		CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMChatBotVC.swift; sourceTree = "<group>"; };
 		CAC7D09324517768004DA2E1 /* HMChatBotAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMChatBotAPI.swift; sourceTree = "<group>"; };
 		CAC7D09524517AE2004DA2E1 /* HMSpeechToTextAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSpeechToTextAPI.swift; sourceTree = "<group>"; };
 		CAC7D09724517CEB004DA2E1 /* HMSpeechRecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSpeechRecognitionService.swift; sourceTree = "<group>"; };
@@ -215,6 +209,7 @@
 		CB6A11BF2453799900833C8E /* HMReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMReminderCell.xib; sourceTree = "<group>"; };
 		CB793EAA225CEA720003C51B /* HMGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMGradientButton.swift; sourceTree = "<group>"; };
 		CB7AD7162453FE2400437AC5 /* HMContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMContactModel.swift; sourceTree = "<group>"; };
+		CB7AD71824544C5300437AC5 /* HMReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMReminderService.swift; sourceTree = "<group>"; };
 		CB86353C225BA5440081CB75 /* HMBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMBaseVC.swift; sourceTree = "<group>"; };
 		CB86353D225BA5440081CB75 /* HMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMNavigationController.swift; sourceTree = "<group>"; };
 		CB86353F225BA7070081CB75 /* HMSystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSystemInfo.swift; sourceTree = "<group>"; };
@@ -239,9 +234,6 @@
 		D3D54DDFEEB860A031F458FD /* Pods-HeyBeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.debug.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.debug.xcconfig"; sourceTree = "<group>"; };
 		D6C4A1F82E6FA9EA173FC72B /* Pods-Develop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.debug.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.debug.xcconfig"; sourceTree = "<group>"; };
 		E67B7C33E2F56F48374DB3CC /* Pods-HeyBeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.release.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.release.xcconfig"; sourceTree = "<group>"; };
-		ED1D6AEE2303B5B600CD983E /* HMBaseChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMBaseChatVC.swift; sourceTree = "<group>"; };
-		ED1D6AF32303B6BA00CD983E /* HMBaseAudioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMBaseAudioVC.swift; sourceTree = "<group>"; };
-		ED1D6AF72303B7C000CD983E /* HMChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMChatService.swift; sourceTree = "<group>"; };
 		ED412A1F22E56B42008B802D /* HMAPIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAPIConfiguration.swift; sourceTree = "<group>"; };
 		ED412A9A22E6B9A4008B802D /* HMPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMPermission.swift; sourceTree = "<group>"; };
 		ED412A9B22E6B9A4008B802D /* HMCameraPhotoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCameraPhotoService.swift; sourceTree = "<group>"; };
@@ -465,7 +457,6 @@
 		CB86353B225BA5360081CB75 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				ED1D6AF22303B69900CD983E /* Chat */,
 				CB86353C225BA5440081CB75 /* HMBaseVC.swift */,
 				CB86353D225BA5440081CB75 /* HMNavigationController.swift */,
 				F13EC46F23D00ED800ACB91A /* HMBaseBottomSheetVC.swift */,
@@ -512,8 +503,8 @@
 		CB86356B225BAFBA0081CB75 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				ED1D6AF72303B7C000CD983E /* HMChatService.swift */,
 				CAC7D09724517CEB004DA2E1 /* HMSpeechRecognitionService.swift */,
+				CB7AD71824544C5300437AC5 /* HMReminderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,7 +513,6 @@
 			isa = PBXGroup;
 			children = (
 				EDAD9D462238B287006D8A5C /* Controllers */,
-				CAC7D08B24513246004DA2E1 /* HMRootTabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -575,15 +565,6 @@
 				58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		ED1D6AF22303B69900CD983E /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				ED1D6AEE2303B5B600CD983E /* HMBaseChatVC.swift */,
-				ED1D6AF32303B6BA00CD983E /* HMBaseAudioVC.swift */,
-			);
-			path = Chat;
 			sourceTree = "<group>";
 		};
 		ED412AA222E6B9B1008B802D /* ViewController */ = {
@@ -791,7 +772,6 @@
 				CB3F8D522453840B0016E703 /* Contact */,
 				CAEC3B742452FAD50076DB66 /* Reminder */,
 				CB86353B225BA5360081CB75 /* Base */,
-				CAC7D08F2451456F004DA2E1 /* HMChatBotVC.swift */,
 				CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */,
 				CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */,
 			);
@@ -1145,7 +1125,6 @@
 				ED412AA622E6B9B1008B802D /* HMPopUpViewController.swift in Sources */,
 				ED80DED7225708F900C9FAFF /* HMURLConstants.swift in Sources */,
 				EDAD9E5E2238FAAA006D8A5C /* UICollectionView+Extension.swift in Sources */,
-				CAC7D08C24513246004DA2E1 /* HMRootTabBarController.swift in Sources */,
 				EDAD9E3E2238C10A006D8A5C /* HMColors.swift in Sources */,
 				ED412A2422E56B4A008B802D /* HMSystemBoots.swift in Sources */,
 				CAC7D08E2451355C004DA2E1 /* ChatContentViewModel.swift in Sources */,
@@ -1167,13 +1146,13 @@
 				ED412ACD22E6B9FC008B802D /* HMRotationLabel.swift in Sources */,
 				CAC7D09424517769004DA2E1 /* HMChatBotAPI.swift in Sources */,
 				CBC6AC9A2453503D007CB1B9 /* Dictionary+Extension.swift in Sources */,
-				ED1D6AFA2303B7C000CD983E /* HMChatService.swift in Sources */,
 				ED5BF4282327429A00B8CECE /* HMMessageConstants.swift in Sources */,
 				CB863558225BA8300081CB75 /* HMCircleView.swift in Sources */,
 				ED412AD022E6B9FC008B802D /* HMInsetLabel.swift in Sources */,
 				CBC6AC9824534CDC007CB1B9 /* HMTexToSpeechAPI.swift in Sources */,
 				EDB5E9E0230566690002A43F /* HMEnumType.swift in Sources */,
 				CB793EAD225CEA720003C51B /* HMGradientButton.swift in Sources */,
+				CB7AD71924544C5300437AC5 /* HMReminderService.swift in Sources */,
 				CB6A11B42453741D00833C8E /* HMReminderCollapseCell.swift in Sources */,
 				EDAD9E6A2238FDF4006D8A5C /* UIView+Extension.swift in Sources */,
 				CB863542225BA7070081CB75 /* HMSystemInfo.swift in Sources */,
@@ -1202,7 +1181,6 @@
 				EDAD9E7622390A39006D8A5C /* HMAPIMainEnvironment.swift in Sources */,
 				CBA5AD6F2281EC5F003B43B6 /* UIAlertController+Extension.swift in Sources */,
 				EDAD9E662238FCB8006D8A5C /* UICollectionViewCell+Extension.swift in Sources */,
-				CAC7D0912451456F004DA2E1 /* HMChatBotVC.swift in Sources */,
 				ED412ABB22E6B9D9008B802D /* HMBorderTextField.swift in Sources */,
 				EDAD9E4D2238C39C006D8A5C /* UIColor+Extension.swift in Sources */,
 				CB3F8D682453A0340016E703 /* HMPostTagAPI.swift in Sources */,
@@ -1210,7 +1188,6 @@
 				ED80DEC52256F3A100C9FAFF /* HMAPIProcessingManager.swift in Sources */,
 				CAC7D0A624519B8C004DA2E1 /* HMSharedData.swift in Sources */,
 				CB58A48022ACFE8000F35564 /* HMWebSocketService.swift in Sources */,
-				ED1D6AF62303B6BA00CD983E /* HMBaseAudioVC.swift in Sources */,
 				EDAD9E7A22390A7E006D8A5C /* HMAPIEnvironmentProtocol.swift in Sources */,
 				ED412A9E22E6B9A4008B802D /* HMPermission.swift in Sources */,
 				EDAD9DB22238B5B8006D8A5C /* AppDelegate.swift in Sources */,
@@ -1221,7 +1198,6 @@
 				ED80DEBA2256F24A00C9FAFF /* HMAPIRequest.swift in Sources */,
 				CB3F8D5A2453844D0016E703 /* HMContactContentCell.swift in Sources */,
 				CB3F8D5F24538ABF0016E703 /* HMAddReminderVC.swift in Sources */,
-				ED1D6AF12303B5B600CD983E /* HMBaseChatVC.swift in Sources */,
 				CAC7D09624517AE2004DA2E1 /* HMSpeechToTextAPI.swift in Sources */,
 				ED80DEC12256F34300C9FAFF /* HMAPIDispatcher.swift in Sources */,
 				ED412AB322E6B9D4008B802D /* HMSegmentControl.swift in Sources */,

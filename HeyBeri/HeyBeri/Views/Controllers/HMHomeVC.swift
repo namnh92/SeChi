@@ -41,10 +41,9 @@ class HMHomeVC: HMBaseVC {
     var action: String?
     
     // MARK: - Life cycles
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        HMOneSignalNotificationService.shared.sendPush()
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     override func setupView() {
         super.setupView()
@@ -138,6 +137,7 @@ class HMHomeVC: HMBaseVC {
                     task.taskTime = self?.time ?? ""
                     task.typeTask = .notCompleted
                     realm.add(task, update: .all)
+                    HMReminderService.instance.createReminder(task)
                 }
             }
         }

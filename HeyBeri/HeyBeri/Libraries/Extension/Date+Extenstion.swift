@@ -42,6 +42,7 @@ extension Date {
     static let dateFormatDisplay = "dd.MM.yyyy - HH:mm"
     static let dateTimeFormat = "HH:mm dd/MM/yyyy"
     static let hourFormat = "HH:mm"
+    static let dateHourFormat = "yyyy-MM-dd HH:mm"
     //    static let locate =  "en_US_POSIX"
     //    static let dateTimeFormatTime = "HH:mm:ss dd/MM/yyyy"
     static let dateTimeFullFormat = "yyyy-MM-dd HH:mm:ss"

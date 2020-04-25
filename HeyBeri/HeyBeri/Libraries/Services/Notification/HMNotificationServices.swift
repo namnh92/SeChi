@@ -178,6 +178,7 @@ extension HMNotificationServices {
     // MARK: - Receive data from remote & local notifications
     func received(notification userInfo: [AnyHashable: Any], application: UIApplication, isRemoteNoti: Bool) {
         // Write your code
+        
     }
 }
 
