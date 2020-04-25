@@ -37,11 +37,11 @@ class HMContactVC: HMBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for contactName in contactNames {
+        for i in 0..<contactNames.count {
             HMRealmService.instance.write { (realm) in
                 let contact = HMContactModel()
-                contact.id = HMContactModel.incrementID()
-                contact.name = contactName
+                contact.id = i
+                contact.name = contactNames[i]
                 realm.add(contact, update: .all)
             }
         }
@@ -107,7 +107,7 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = tableView.reusableCell(type: HMContactHeaderCell.self) else { return UITableViewCell() }
-            cell.model = listContact[indexPath.section]
+            cell.contactName = contactNames[indexPath.section]
             return cell
         } else {
             guard let cell = tableView.reusableCell(type: HMContactContentCell.self) else { return UITableViewCell() }
@@ -121,11 +121,12 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFromPush {
+            isFromPush = false
             if let task = HMRealmService.instance.load(listOf: TaskReminder.self).filter({ $0.id == taskId }).first {
                 HMOneSignalNotificationService.shared.sendHelpPush(objTask: task.taskName)
                 HMRealmService.instance.write { (realm) in
                     let updatedTask = task
-                    updatedTask.supporter = listContact[indexPath.row]
+                    updatedTask.supporter = listContact[indexPath.section]
                     realm.add(updatedTask, update: .all)
                 }
                 return

@@ -12,9 +12,9 @@ class HMContactHeaderCell: UITableViewCell {
 
     @IBOutlet weak var contactNameLB: UILabel!
     
-    var model: HMContactModel? {
+    var contactName: String? {
         didSet {
-            contactNameLB.text = model?.name
+            contactNameLB.text = contactName
         }
     }
     

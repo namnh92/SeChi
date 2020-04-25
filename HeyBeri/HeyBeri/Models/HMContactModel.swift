@@ -17,8 +17,8 @@ class HMContactModel: Object {
         return "id"
     }
     
-    class func incrementID() -> Int {
-        let realm = try! Realm()
-        return (realm.objects(HMContactModel.self).max(ofProperty: "id") as Int? ?? 0) + 1
-    }
+//    class func incrementID() -> Int {
+//        let realm = try! Realm()
+//        return (realm.objects(HMContactModel.self).max(ofProperty: "id") as Int? ?? 0) + 1
+//    }
 }
