@@ -176,9 +176,40 @@ extension HMNotificationServices {
 // MARK: - Handle push notification & local notification data
 extension HMNotificationServices {
     // MARK: - Receive data from remote & local notifications
-    func received(notification userInfo: [AnyHashable: Any], application: UIApplication, isRemoteNoti: Bool) {
+    func received(identifier: String, notification userInfo: [AnyHashable: Any], application: UIApplication, isRemoteNoti: Bool) {
         // Write your code
-        
+    }
+    
+    func received(identifier: String, notification userInfo: [AnyHashable: Any], action: String, application: UIApplication, isRemoteNoti: Bool) {
+        // Write your code
+        if (identifier == "reminderLocal") {
+            switch action {
+            case UNNotificationDismissActionIdentifier:
+                print("Dismiss Action")
+            case UNNotificationDefaultActionIdentifier:
+                print("Default")
+            case "accept":
+                HMRealmService.instance.write { (realm) in
+                    let task = TaskReminder()
+                    task.id = userInfo["taskId"] as! Int
+                    task.typeTask = .completed
+                    realm.add(task, update: .all)
+                }
+                let nav = UINavigationController(rootViewController: HMHomeVC.create())
+                var window = application.keyWindow
+                HMSystemBoots.instance.changeRoot(window: &window, rootController: nav)
+            case "delete":
+                print("delete")
+            case "help":
+                let home = HMHomeVC.create()
+                home.isFromPush = true
+                let nav = UINavigationController(rootViewController: HMHomeVC.create())
+                var window = application.keyWindow
+                HMSystemBoots.instance.changeRoot(window: &window, rootController: nav)
+            default:
+                print("Unknown action")
+            }
+        }
     }
 }
 
@@ -191,7 +222,8 @@ extension HMNotificationServices: UNUserNotificationCenterDelegate {
             // User did tap at remote notification
             isRemoteNoti = true
         }
-        received(notification: response.notification.request.content.userInfo, application: UIApplication.shared, isRemoteNoti: isRemoteNoti)
+        received(identifier: response.notification.request.content.categoryIdentifier, notification: response.notification.request.content.userInfo, application: UIApplication.shared, isRemoteNoti: isRemoteNoti)
+        received(identifier: response.notification.request.content.categoryIdentifier, notification: response.notification.request.content.userInfo, action: response.actionIdentifier, application: UIApplication.shared, isRemoteNoti: isRemoteNoti)
         completionHandler()
     }
     

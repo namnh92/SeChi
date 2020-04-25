@@ -13,18 +13,25 @@ class HMReminderCell: UITableViewCell {
     @IBOutlet weak var backView: HMShadowView!
     @IBOutlet weak var taskTimeLB: HMInsetLabel!
     @IBOutlet weak var taskDetailLB: UILabel!
+    @IBOutlet weak var checkBoxButton: HMCheckBoxButton!
     
     var model: TaskReminder? {
         didSet {
             if let model = model {
                 taskTimeLB.text = model.taskTime
-                taskDetailLB.text = model.taskName
+                if model.typeTask == .completed {
+                    taskDetailLB.strikeThrough(text: model.taskName)
+                } else {
+                    taskDetailLB.text = model.taskName
+                }
+                checkBoxButton.isChecked = model.typeTask == .completed
             }
         }
     }
+    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    super.awakeFromNib()
+    // Initialization code
         backgroundColor = .clear
     }
 

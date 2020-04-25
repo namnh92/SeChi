@@ -142,6 +142,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backView" destination="hEL-aj-N5N" id="eap-CK-S5M"/>
+                <outlet property="checkBoxButton" destination="4BM-oA-AJC" id="1zK-zr-Oh1"/>
                 <outlet property="taskDetailLB" destination="ihe-hA-W1x" id="e8N-7z-3iF"/>
                 <outlet property="taskTimeLB" destination="9eH-qA-KrG" id="Hci-kC-abF"/>
             </connections>

@@ -20,10 +20,11 @@ class HMReminderService: NSObject {
         content.sound = UNNotificationSound.default
         content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1);
         content.categoryIdentifier = "reminderLocal"
+        content.userInfo = ["taskId": reminder.id]
         // Deliver the notification in 60 seconds.
         var timeInterval: TimeInterval = 60.0
-        if let date = Date.getDateBy(string: "2020-04-25 18:39", format: Date.dateHourFormat) {
-            timeInterval = date.timeIntervalSince(Date())
+        if let date = Date.getDateBy(string: "2020-04-25 19:09", format: Date.dateHourFormat) {
+            timeInterval = date.timeIntervalSince(Date()) > 0 ? date.timeIntervalSince(Date()) : timeInterval
         }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest.init(identifier: "reminderLocal", content: content, trigger: trigger)

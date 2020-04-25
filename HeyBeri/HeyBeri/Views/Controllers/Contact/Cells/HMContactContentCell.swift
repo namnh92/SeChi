@@ -19,6 +19,12 @@ class HMContactContentCell: UITableViewCell {
             if let model = model {
                 timeLB.text = model.taskTime
                 taskDetailLB.text = model.taskName
+                if model.typeTask == .completed {
+                    taskDetailLB.strikeThrough(text: model.taskName)
+                } else {
+                    taskDetailLB.text = model.taskName
+                }
+                checkBoxButton.isChecked = model.typeTask == .supportCompleted
             }
         }
     }

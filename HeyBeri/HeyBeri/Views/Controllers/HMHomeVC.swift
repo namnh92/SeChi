@@ -10,7 +10,7 @@ import UIKit
 
 enum MenuItem: Int {
     case reminder = 0
-    case calendar = 1
+    case contact = 1
 }
 
 class HMHomeVC: HMBaseVC {
@@ -31,11 +31,12 @@ class HMHomeVC: HMBaseVC {
             if let currentIndex = currentIndex {
                 reminderIndicatorView.isHidden = currentIndex == .reminder ? false : true
                 calendarIndicatorView.isHidden = !reminderIndicatorView.isHidden
-                let direction: UIPageViewController.NavigationDirection = currentIndex == .calendar ? .forward : .reverse
+                let direction: UIPageViewController.NavigationDirection = currentIndex == .contact ? .forward : .reverse
                 pageContainer.setViewControllers([pages[currentIndex.rawValue]], direction: direction, animated: true, completion: nil)
             }
         }
     }
+    var isFromPush: Bool = false
     var time: String?
     var date: String?
     var action: String?
@@ -51,7 +52,7 @@ class HMHomeVC: HMBaseVC {
         setUpPageContainer()
         reminderIndicatorView.isHidden = true
         calendarIndicatorView.isHidden = true
-        currentIndex = .reminder
+        currentIndex = isFromPush ? .contact : .reminder
         addLeftNavigationBarbutton()
         addRightNavigationBarbutton()
     }
