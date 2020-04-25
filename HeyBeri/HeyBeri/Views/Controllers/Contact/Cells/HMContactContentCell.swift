@@ -10,6 +10,10 @@ import UIKit
 
 class HMContactContentCell: UITableViewCell {
 
+    @IBOutlet weak var timeLB: HMInsetLabel!
+    @IBOutlet weak var taskDetailLB: UILabel!
+    @IBOutlet weak var checkBoxButton: HMCheckBoxButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
