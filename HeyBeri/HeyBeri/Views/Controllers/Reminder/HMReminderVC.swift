@@ -91,9 +91,11 @@ extension HMReminderVC: UITableViewDataSource, UITableViewDelegate {
         } else {
             guard let cell = tableView.reusableCell(type: HMReminderCell.self) else { return UITableViewCell() }
             let key = Array(reminderList.keys)[indexPath.section]
-            cell.setBorder(isBorder: indexPath.row == reminderList[key]?.count)
-            cell.model = reminderList[key]?[indexPath.row]
-            return cell
+            if let reminderListByDate = reminderList[key] {
+                cell.setBorder(isBorder: indexPath.row == reminderListByDate.count)
+                cell.model = reminderListByDate[indexPath.row]
+                return cell
+            } else { return UITableViewCell() }
         }
     }
     
