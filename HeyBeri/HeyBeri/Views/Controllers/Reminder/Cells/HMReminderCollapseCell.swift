@@ -11,6 +11,13 @@ import UIKit
 class HMReminderCollapseCell: UITableViewCell {
 
     @IBOutlet weak var backView: HMCornerView!
+    @IBOutlet weak var taskDateLB: UILabel!
+    
+    var taskDate: String? {
+        didSet {
+            taskDateLB.text = taskDate
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

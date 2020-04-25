@@ -10,6 +10,14 @@ import UIKit
 
 class HMContactHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var contactNameLB: UILabel!
+    
+    var model: HMContactModel? {
+        didSet {
+            contactNameLB.text = model?.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

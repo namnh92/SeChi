@@ -11,7 +11,17 @@ import UIKit
 class HMReminderCell: UITableViewCell {
 
     @IBOutlet weak var backView: HMShadowView!
+    @IBOutlet weak var taskTimeLB: HMInsetLabel!
+    @IBOutlet weak var taskDetailLB: UILabel!
     
+    var model: TaskReminder? {
+        didSet {
+            if let model = model {
+                taskTimeLB.text = model.taskTime
+                taskDetailLB.text = model.taskName
+            }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

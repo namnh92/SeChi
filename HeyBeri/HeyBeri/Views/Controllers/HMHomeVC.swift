@@ -36,6 +36,9 @@ class HMHomeVC: HMBaseVC {
             }
         }
     }
+    var time: String?
+    var date: String?
+    var action: String?
     
     // MARK: - Life cycles
 //    override func viewDidLoad() {
@@ -109,17 +112,17 @@ class HMHomeVC: HMBaseVC {
             guard let sSelf = self else { return }
             let group = DispatchGroup()
             group.enter()
-            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
-                print(response.time)
+            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { [weak self] (response) in
+                self?.time = response.time
                 group.leave()
             }) { (error) in
                 group.leave()
             }
             
             group.enter()
-            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
-                print(response.day)
-                print(response.action)
+            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { [weak self] (response) in
+                self?.date = response.day
+                self?.action = response.action
                 group.leave()
             }) { (error) in
                 group.leave()
@@ -127,6 +130,15 @@ class HMHomeVC: HMBaseVC {
             
             group.notify(queue: .main) {
                 // Do Add DB
+                HMRealmService.instance.write { [weak self] (realm) in
+                    let task = TaskReminder()
+                    task.id = TaskReminder.incrementID()
+                    task.taskName = message ?? ""
+                    task.taskDay = self?.date ?? ""
+                    task.taskTime = self?.time ?? ""
+                    task.typeTask = .notCompleted
+                    realm.add(task, update: .all)
+                }
             }
         }
         addReminderVC.modalPresentationStyle = .overCurrentContext

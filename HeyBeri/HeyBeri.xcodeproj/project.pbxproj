@@ -46,6 +46,7 @@
 		CB6A11C02453799900833C8E /* HMReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A11BE2453799900833C8E /* HMReminderCell.swift */; };
 		CB6A11C12453799900833C8E /* HMReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6A11BF2453799900833C8E /* HMReminderCell.xib */; };
 		CB793EAD225CEA720003C51B /* HMGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB793EAA225CEA720003C51B /* HMGradientButton.swift */; };
+		CB7AD7172453FE2400437AC5 /* HMContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AD7162453FE2400437AC5 /* HMContactModel.swift */; };
 		CB863542225BA7070081CB75 /* HMSystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86353F225BA7070081CB75 /* HMSystemInfo.swift */; };
 		CB863550225BA7FA0081CB75 /* HMCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86354D225BA7FA0081CB75 /* HMCornerView.swift */; };
 		CB863554225BA8230081CB75 /* HMGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB863551225BA8230081CB75 /* HMGradientView.swift */; };
@@ -213,6 +214,7 @@
 		CB6A11BE2453799900833C8E /* HMReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMReminderCell.swift; sourceTree = "<group>"; };
 		CB6A11BF2453799900833C8E /* HMReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMReminderCell.xib; sourceTree = "<group>"; };
 		CB793EAA225CEA720003C51B /* HMGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMGradientButton.swift; sourceTree = "<group>"; };
+		CB7AD7162453FE2400437AC5 /* HMContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMContactModel.swift; sourceTree = "<group>"; };
 		CB86353C225BA5440081CB75 /* HMBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMBaseVC.swift; sourceTree = "<group>"; };
 		CB86353D225BA5440081CB75 /* HMNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMNavigationController.swift; sourceTree = "<group>"; };
 		CB86353F225BA7070081CB75 /* HMSystemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMSystemInfo.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 			children = (
 				CAC7D08A24512C46004DA2E1 /* SharedData */,
 				47D0299124538B1C0016CED6 /* Specimen.swift */,
+				CB7AD7162453FE2400437AC5 /* HMContactModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1137,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB86355C225BA84B0081CB75 /* HMRectangularView.swift in Sources */,
+				CB7AD7172453FE2400437AC5 /* HMContactModel.swift in Sources */,
 				CAEC3B6D2452F0B50076DB66 /* HMReminderVC.swift in Sources */,
 				ED412AA622E6B9B1008B802D /* HMPopUpViewController.swift in Sources */,
 				ED80DED7225708F900C9FAFF /* HMURLConstants.swift in Sources */,
