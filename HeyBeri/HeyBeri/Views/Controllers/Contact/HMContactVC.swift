@@ -111,7 +111,7 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.reusableCell(type: HMContactContentCell.self) else { return UITableViewCell() }
             let key = Array(reminderList.keys)[indexPath.section]
             if let reminderListByDate = reminderList[key] {
-                cell.model = reminderListByDate[indexPath.row]
+                cell.model = reminderListByDate[indexPath.row - 1]
                 return cell
             } else { return UITableViewCell() }
         }

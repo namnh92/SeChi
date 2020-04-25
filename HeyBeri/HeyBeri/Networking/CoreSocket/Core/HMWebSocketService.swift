@@ -9,6 +9,7 @@
 import UIKit
 import Starscream
 import SwiftyJSON
+import AVFoundation
 
 class HMWebSocketService {
 
@@ -52,23 +53,81 @@ class HMWebSocketService {
         socket?.write(string: string)
     }
     
+    func write(data: Data) {
+        print("-> [Web Socket] will write: \(data)")
+        socket?.write(data: data)
+    }
+    
     func isSocketConnected() -> Bool {
         guard let socket = socket else { return false }
         return socket.isConnected
     }
     
-    func send(name: String) {
+    func recognize(assetURL: URL) {
         guard HMWebSocketService.instance.isSocketConnected() else { return }
-        var parameters: [String: Any] = [:]
-        parameters["type"] = "payload"
-        parameters["content"] = "get_started"
-        parameters["sender_name"] = name
-        if let senderId = HMSharedData.chatBotSenderId {
-            parameters["sender_id"] = senderId
+        let sampleRate: UInt32 = 16000 // 16k sample/sec
+        let bitDepth: UInt16 = 16 // 16 bit/sample/channel
+
+        let opts: [AnyHashable : Any] = [:]
+        let asset = AVURLAsset(url: assetURL, options: opts as? [String : Any])
+        var reader: AVAssetReader? = nil
+        do {
+            reader = try AVAssetReader(asset: asset)
+        } catch {
         }
-        if let jsonString = JSON(parameters).rawString() {
-            HMWebSocketService.instance.write(string: jsonString)
+        let settings = [
+            AVFormatIDKey : NSNumber(value: Int32(kAudioFormatLinearPCM)),
+            AVSampleRateKey : NSNumber(value: Float(sampleRate)),
+            AVLinearPCMBitDepthKey : NSNumber(value: Int32(bitDepth)),
+            AVLinearPCMIsNonInterleaved : NSNumber(value: false),
+            AVLinearPCMIsFloatKey : NSNumber(value: false),
+            AVLinearPCMIsBigEndianKey : NSNumber(value: false)
+        ]
+        
+        var output: AVAssetReaderTrackOutput? = nil
+        let object = asset.tracks[0]
+            output = AVAssetReaderTrackOutput(
+                track: object,
+                outputSettings: settings)
+        
+        if let output = output {
+            reader?.add(output)
         }
+        reader?.startReading()
+
+        // read the samples from the asset and append them subsequently
+        while reader?.status != .completed {
+            let buffer = output?.copyNextSampleBuffer()
+            if buffer == nil {
+                continue
+            }
+            
+            if let buffer = buffer,
+                let blockBuffer = CMSampleBufferGetDataBuffer(buffer) {
+                let size = CMBlockBufferGetDataLength(blockBuffer)
+                if let outBytes = malloc(size) {
+                    CMBlockBufferCopyDataBytes(blockBuffer, atOffset: 0, dataLength: size , destination: outBytes)
+                    CMSampleBufferInvalidate(buffer)
+                    let data = Data(bytes: outBytes, count: size)
+                    HMWebSocketService.instance.write(data: data)
+                    free(outBytes)
+                }
+            }
+        }
+        HMWebSocketService.instance.write(string: "EOS")
+    }
+    
+    func recognize(inputSteam: InputStream) {
+        guard HMWebSocketService.instance.isSocketConnected() else { return }
+        let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: 8000)
+        var nRead = inputSteam.read(bytes, maxLength: 8000)
+        while (nRead != -1) {
+            nRead = inputSteam.read(bytes, maxLength: 8000)
+            let data = Data(bytes: bytes, count: nRead)
+            HMWebSocketService.instance.write(data: data)
+            usleep(250)
+        }
+        HMWebSocketService.instance.write(string: "EOS")
     }
 }
 

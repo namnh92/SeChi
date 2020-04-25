@@ -122,17 +122,24 @@ class HMSpeechRecognitionService: NSObject {
         print("-> [Speech Recognition] File url path: \(url)")
         if FileManager.default.fileExists(atPath: url.path) {
             if let data = try? Data(contentsOf: url) {
-                HMSpeechToTextAPI(data: data)
-                    .showIndicator(false)
-                    .autoShowApiErrorAlert(false)
-                    .autoShowRequestErrorAlert(false)
-                    .execute(target: nil, success: { response in
-                    print("-> [Speech Recognition] Received messages: \(response.messages)")
-                    let filterMessages = response.messages.filter({ $0 != "" && $0 != "<unknown>" })
+//                HMWebSocketService.instance.recognize(inputSteam: InputStream(data: data))
+                HMWebSocketService.instance.recognize(assetURL: url)
+                HMWebSocketService.instance.didReceiveJSON = { json in
+                    let messages = json["result"]["hypotheses"].arrayValue.map({ $0["transcript_normed"].string })
+                    let filterMessages = messages.filter({ $0 != "" && $0 != "<unknown>" })
                     self.didReceiveMessages?(filterMessages)
-                }, failure: { error in
-                    self.didReceiveMessages?([])
-                })
+                }
+//                HMSpeechToTextAPI(data: data)
+//                    .showIndicator(false)
+//                    .autoShowApiErrorAlert(false)
+//                    .autoShowRequestErrorAlert(false)
+//                    .execute(target: nil, success: { response in
+//                    print("-> [Speech Recognition] Received messages: \(response.messages)")
+//                    let filterMessages = response.messages.filter({ $0 != "" && $0 != "<unknown>" })
+//                    self.didReceiveMessages?(filterMessages)
+//                }, failure: { error in
+//                    self.didReceiveMessages?([])
+//                })
             }
         }
     }
