@@ -23,7 +23,7 @@ class HMRealmService {
         } catch { }
     }
     
-    func load<T: Object>(listOf: T.Type, filter: NSPredicate? = nil) -> [T] {
+    func load<T: Object>(listOf: T.Type, filter: String? = nil) -> [T] {
         do {
             var objects = try Realm().objects(T.self)
             if let filter = filter {

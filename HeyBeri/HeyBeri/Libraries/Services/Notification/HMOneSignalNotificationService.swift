@@ -33,7 +33,16 @@ class HMOneSignalNotificationService: NSObject {
             
             if let additionalData = result!.notification.payload!.additionalData {
                 print("additionalData = \(additionalData)")
-                
+                if let actionSelected = additionalData["actionSelected"] as? String {
+                    switch actionSelected {
+                    case "accept":
+                        self.send(mess: "Tôi sẽ giúp đỡ")
+                    case "cancel":
+                        self.send(mess: "Tôi không thể giúp đỡ")
+                    default:
+                        break
+                    }
+                }
             }
         }
         
@@ -47,8 +56,6 @@ class HMOneSignalNotificationService: NSObject {
         OneSignal.add(self as OSPermissionObserver)
         
         OneSignal.add(self as OSSubscriptionObserver)
-        
-        sendPushOnOtherSide(objName: "Chồng Béo", objMessage: #""Cảm ơn chồng béo nhiều!""#)
     }
     
     func sendTag(userId: String?) {
@@ -70,8 +77,7 @@ class HMOneSignalNotificationService: NSObject {
                                     "include_player_ids": [userId],
                                     "buttons": [["id": "id1", "text": "Đồng Ý"]
                                         , ["id": "id2", "text": "Từ Chối"]
-                                        , ["id": "id3", "text": "Nhờ Trợ Giúp"]],
-                                    "ios_sound": "maybe-next-time.wav"])
+                                        , ["id": "id3", "text": "Nhờ Trợ Giúp"]]])
     }
     
     func sendHelpPush(objTask: String) {
@@ -79,8 +85,8 @@ class HMOneSignalNotificationService: NSObject {
         let userId = status.subscriptionStatus.userId
         OneSignal.postNotification(["contents": ["en": #"\#(objTask)"#],
                                     "include_player_ids": [userId],
-                                    "buttons": [["id": "helpId1", "text": "Đồng Ý"]
-                                        , ["id": "helpId2", "text": "Từ Chối"]],
+                                    "buttons": [["id": "cancel", "text": "Từ chối"],
+                                                ["id": "accept", "text": "Đồng ý"]],
                                     "ios_sound": "maybe-next-time.wav"])
     }
     
@@ -89,6 +95,13 @@ class HMOneSignalNotificationService: NSObject {
         let userId = status.subscriptionStatus.userId
         OneSignal.postNotification(["contents": ["en": #"Vợ Mập gửi \#u{2764} cho \#(objName): \#(objMessage)"#],
                                     "include_player_ids": [userId]])
+    }
+    
+    func send(mess: String) {
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let userId = status.subscriptionStatus.userId
+        OneSignal.postNotification(["contents": ["en": #"\#(mess)"#],
+        "include_player_ids": [userId]])
     }
 }
 

@@ -121,7 +121,7 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFromPush {
-            if let task = HMRealmService.instance.load(listOf: TaskReminder.self, filter: NSPredicate(format: "id=%@", taskId)).first {
+            if let task = HMRealmService.instance.load(listOf: TaskReminder.self).filter({ $0.id == taskId }).first {
                 HMOneSignalNotificationService.shared.sendHelpPush(objTask: task.taskName)
                 HMRealmService.instance.write { (realm) in
                     let updatedTask = task
