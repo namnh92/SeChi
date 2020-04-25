@@ -36,6 +36,9 @@ class HMHomeVC: HMBaseVC {
             }
         }
     }
+    var time: String?
+    var date: String?
+    var action: String?
     
     // MARK: - Life cycles
 //    override func viewDidLoad() {
@@ -91,6 +94,19 @@ class HMHomeVC: HMBaseVC {
         navigationItem.rightBarButtonItems = [notifyItem]
     }
     
+//    split message and take the action word only
+    private func takeActionFromWord(msg: String) -> String {
+        let words_list = ["đón", "đi", "mua", "lau", "quét"]
+        var job = ""
+        for word in words_list {
+            if msg.contains(word) {
+                job = "\(word)\(msg.components(separatedBy: word)[1])"
+            }
+        }
+    return job
+        
+    }
+    
     @objc private func invokeMenuButton(_ sender: UIButton) {
         
     }
@@ -109,17 +125,17 @@ class HMHomeVC: HMBaseVC {
             guard let sSelf = self else { return }
             let group = DispatchGroup()
             group.enter()
-            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
-                print(response.time)
+            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { [weak self] (response) in
+                self?.time = response.time
                 group.leave()
             }) { (error) in
                 group.leave()
             }
             
             group.enter()
-            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
-                print(response.day)
-                print(response.action)
+            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { [weak self] (response) in
+                self?.date = response.day
+                self?.action = response.action
                 group.leave()
             }) { (error) in
                 group.leave()
@@ -127,7 +143,17 @@ class HMHomeVC: HMBaseVC {
             
             group.notify(queue: .main) {
                 // Do Add DB
+                HMRealmService.instance.write { [weak self] (realm) in
+                    let task = TaskReminder()
+                    task.id = TaskReminder.incrementID()
+                    task.taskName = self!.takeActionFromWord(msg: message ?? "").replace(string: task.taskTime, with: "").replace(string: task.taskDay, with: "")
+                    task.taskDay = self?.date ?? ""
+                    task.taskTime = self?.time ?? ""
+                    task.typeTask = .notCompleted
+                    realm.add(task, update: .all)
+                }
             }
+            
         }
         addReminderVC.modalPresentationStyle = .overCurrentContext
         let transition = CATransition()

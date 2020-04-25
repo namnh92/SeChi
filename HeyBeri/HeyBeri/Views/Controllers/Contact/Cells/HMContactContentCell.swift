@@ -14,6 +14,15 @@ class HMContactContentCell: UITableViewCell {
     @IBOutlet weak var taskDetailLB: UILabel!
     @IBOutlet weak var checkBoxButton: HMCheckBoxButton!
     
+    var model: TaskReminder? {
+        didSet {
+            if let model = model {
+                timeLB.text = model.taskTime
+                taskDetailLB.text = model.taskName
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

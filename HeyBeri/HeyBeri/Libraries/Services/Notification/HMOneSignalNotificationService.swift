@@ -32,7 +32,8 @@ class HMOneSignalNotificationService: NSObject {
             print("notification sound = \(payload?.sound ?? "None")")
             
             if let additionalData = result!.notification.payload!.additionalData {
-                print("additionalData = \(additionalData)")
+//                print("additionalData = \(additionalData)")
+                print("test id", additionalData["actionSelected"])
             }
         }
         
@@ -47,7 +48,7 @@ class HMOneSignalNotificationService: NSObject {
         
         OneSignal.add(self as OSSubscriptionObserver)
         
-        sendPushSayThankYou(objName: "Chồng Béo", objMessage: #""Cảm ơn chồng béo nhiều!""#)
+        sendPush(objTask: "nhớ mua chuối nhé")
     }
     
     func sendTag(userId: String?) {
@@ -77,8 +78,8 @@ class HMOneSignalNotificationService: NSObject {
         let userId = status.subscriptionStatus.userId
         OneSignal.postNotification(["contents": ["en": #"\#(objTask)"#],
                                     "include_player_ids": [userId],
-                                    "buttons": [["id": "id1", "text": "Đồng Ý"]
-                                        , ["id": "id2", "text": "Từ Chối"]],                             "ios_sound": "maybe-next-time.wav"])
+                                    "buttons": [["id": "id4", "text": "Đồng Ý"]
+                                        , ["id": "id5", "text": "Từ Chối"]],                             "ios_sound": "maybe-next-time.wav"])
     }
 
     
