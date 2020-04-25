@@ -146,9 +146,9 @@ class HMHomeVC: HMBaseVC {
                 HMRealmService.instance.write { [weak self] (realm) in
                     let task = TaskReminder()
                     task.id = TaskReminder.incrementID()
-                    task.taskName = self!.takeActionFromWord(msg: message ?? "").replace(string: task.taskTime, with: "").replace(string: task.taskDay, with: "")
                     task.taskDay = self?.date ?? ""
                     task.taskTime = self?.time ?? ""
+                    task.taskName = self!.takeActionFromWord(msg: message ?? "").replace(string: task.taskTime, with: "").replace(string: task.taskDay, with: "").replace(string: "lúc", with: "")
                     task.typeTask = .notCompleted
                     realm.add(task, update: .all)
                 }
