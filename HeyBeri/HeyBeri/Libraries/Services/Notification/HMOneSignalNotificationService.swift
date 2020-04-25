@@ -33,6 +33,7 @@ class HMOneSignalNotificationService: NSObject {
             
             if let additionalData = result!.notification.payload!.additionalData {
                 print("additionalData = \(additionalData)")
+                
             }
         }
         
@@ -78,8 +79,8 @@ class HMOneSignalNotificationService: NSObject {
         let userId = status.subscriptionStatus.userId
         OneSignal.postNotification(["contents": ["en": #"\#(objTask)"#],
                                     "include_player_ids": [userId],
-                                    "buttons": [["id": "id1", "text": "Đồng Ý"]
-                                        , ["id": "id2", "text": "Từ Chối"]],
+                                    "buttons": [["id": "helpId1", "text": "Đồng Ý"]
+                                        , ["id": "helpId2", "text": "Từ Chối"]],
                                     "ios_sound": "maybe-next-time.wav"])
     }
     

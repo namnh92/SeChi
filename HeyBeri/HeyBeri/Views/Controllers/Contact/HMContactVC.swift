@@ -121,14 +121,15 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFromPush {
-            HMOneSignalNotificationService.shared.sendHelpPush(objTask: "Hãy giúp tôi")
-            HMRealmService.instance.write { (realm) in
-                let task = TaskReminder()
-                task.id = taskId
-                task.supporter = listContact[indexPath.row]
-                realm.add(task, update: .all)
+            if let task = HMRealmService.instance.load(listOf: TaskReminder.self, filter: NSPredicate(format: "id=%@", taskId)).first {
+                HMOneSignalNotificationService.shared.sendHelpPush(objTask: task.taskName)
+                HMRealmService.instance.write { (realm) in
+                    let updatedTask = task
+                    updatedTask.supporter = listContact[indexPath.row]
+                    realm.add(updatedTask, update: .all)
+                }
+                return
             }
-            return
         }
         if indexPath.row == 0 {
             if collapseSection.contains(indexPath.section) {
