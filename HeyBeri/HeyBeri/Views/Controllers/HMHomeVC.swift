@@ -145,6 +145,9 @@ class HMHomeVC: HMBaseVC {
                     task.typeTask = .notCompleted
                     realm.add(task, update: .all)
                     HMReminderService.instance.createReminder(task)
+                    if let vc = self?.pages[MenuItem.reminder.rawValue] as? HMReminderVC {
+                        vc.getData()
+                    }
                 }
             }
         }

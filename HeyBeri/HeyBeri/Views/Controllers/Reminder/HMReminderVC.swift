@@ -49,7 +49,7 @@ class HMReminderVC: HMBaseVC {
         tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 120, right: 0)
     }
     
-    private func getData() {
+    func getData() {
         let listTaskReminder = HMRealmService.instance.load(listOf: TaskReminder.self).filter({ $0.supporter == nil })
         reminderList = Dictionary(grouping: listTaskReminder, by: { $0.taskDay })
     }
