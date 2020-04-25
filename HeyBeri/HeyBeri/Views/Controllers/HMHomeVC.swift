@@ -19,6 +19,7 @@ class HMHomeVC: HMBaseVC {
     @IBOutlet weak var segmentedView: UIView!
     @IBOutlet weak var reminderIndicatorView: HMGradientView!
     @IBOutlet weak var calendarIndicatorView: HMGradientView!
+    @IBOutlet weak var addReminderButton: UIButton!
     
     // MARK: - Constants
     private let pages: [HMBaseVC] = [HMReminderVC.create(), HMContactVC.create()]
@@ -104,11 +105,35 @@ class HMHomeVC: HMBaseVC {
     
     @IBAction func invokeAddReminder(_ sender: UIButton) {
         let addReminderVC = HMAddReminderVC.create()
-        let nav = UINavigationController(rootViewController: addReminderVC)
-        let popupVC = HMPopUpViewController(contentController: nav, position: .bottom(0), popupWidth: HMSystemInfo.screenWidth, popupHeight: HMSystemInfo.screenHeight)
-        popupVC.backgroundAlpha = 0
-        popupVC.cornerRadius = 0
-        popupVC.shadowEnabled = false
-        present(popupVC, animated: true, completion: nil)
+        addReminderVC.didAddReminder = { [weak self] message in
+            guard let sSelf = self else { return }
+            let group = DispatchGroup()
+            group.enter()
+            HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
+                print(response.time)
+                group.leave()
+            }) { (error) in
+                group.leave()
+            }
+            
+            group.enter()
+            HMPostTagAPI(text: message ?? "").execute(target: sSelf, success: { (response) in
+                print(response.day)
+                print(response.action)
+                group.leave()
+            }) { (error) in
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
+                // Do Add DB
+            }
+        }
+        addReminderVC.modalPresentationStyle = .overCurrentContext
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.subtype = CATransitionSubtype.fromTop
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(addReminderVC, animated: true, completion: nil)
     }
 }

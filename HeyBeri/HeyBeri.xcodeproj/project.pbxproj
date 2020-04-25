@@ -35,6 +35,8 @@
 		CB3F8D5B2453844D0016E703 /* HMContactContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3F8D592453844D0016E703 /* HMContactContentCell.xib */; };
 		CB3F8D5F24538ABF0016E703 /* HMAddReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3F8D5D24538ABF0016E703 /* HMAddReminderVC.swift */; };
 		CB3F8D6024538ABF0016E703 /* HMAddReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3F8D5E24538ABF0016E703 /* HMAddReminderVC.xib */; };
+		CB3F8D6624539ED60016E703 /* HMNameEntityRecognitionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3F8D6524539ED60016E703 /* HMNameEntityRecognitionAPI.swift */; };
+		CB3F8D682453A0340016E703 /* HMPostTagAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3F8D672453A0340016E703 /* HMPostTagAPI.swift */; };
 		CB58A48022ACFE8000F35564 /* HMWebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */; };
 		CB58A48322ACFE8000F35564 /* HMSocketIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */; };
 		CB58A48622ACFE8000F35564 /* HMSocketConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */; };
@@ -200,6 +202,8 @@
 		CB3F8D592453844D0016E703 /* HMContactContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMContactContentCell.xib; sourceTree = "<group>"; };
 		CB3F8D5D24538ABF0016E703 /* HMAddReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddReminderVC.swift; sourceTree = "<group>"; };
 		CB3F8D5E24538ABF0016E703 /* HMAddReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMAddReminderVC.xib; sourceTree = "<group>"; };
+		CB3F8D6524539ED60016E703 /* HMNameEntityRecognitionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMNameEntityRecognitionAPI.swift; sourceTree = "<group>"; };
+		CB3F8D672453A0340016E703 /* HMPostTagAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPostTagAPI.swift; sourceTree = "<group>"; };
 		CB58A47822ACFE8000F35564 /* HMWebSocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMWebSocketService.swift; sourceTree = "<group>"; };
 		CB58A47922ACFE8000F35564 /* HMSocketIOService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketIOService.swift; sourceTree = "<group>"; };
 		CB58A47B22ACFE8000F35564 /* HMSocketConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMSocketConfiguration.swift; sourceTree = "<group>"; };
@@ -714,6 +718,8 @@
 				CAC7D09324517768004DA2E1 /* HMChatBotAPI.swift */,
 				CAC7D09524517AE2004DA2E1 /* HMSpeechToTextAPI.swift */,
 				CBC6AC9724534CDC007CB1B9 /* HMTexToSpeechAPI.swift */,
+				CB3F8D6524539ED60016E703 /* HMNameEntityRecognitionAPI.swift */,
+				CB3F8D672453A0340016E703 /* HMPostTagAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1146,6 +1152,7 @@
 				CB863567225BAF4C0081CB75 /* HMBaseVC.swift in Sources */,
 				CBA5AD752281ECEC003B43B6 /* HMAPIUIAlert.swift in Sources */,
 				CB3F8D562453843E0016E703 /* HMContactHeaderCell.swift in Sources */,
+				CB3F8D6624539ED60016E703 /* HMNameEntityRecognitionAPI.swift in Sources */,
 				CB863550225BA7FA0081CB75 /* HMCornerView.swift in Sources */,
 				CAC7D0B024529B24004DA2E1 /* HMOneSignalNotificationService.swift in Sources */,
 				ED70DBB222E6F0E7003A591A /* HMSlider.swift in Sources */,
@@ -1194,6 +1201,7 @@
 				CAC7D0912451456F004DA2E1 /* HMChatBotVC.swift in Sources */,
 				ED412ABB22E6B9D9008B802D /* HMBorderTextField.swift in Sources */,
 				EDAD9E4D2238C39C006D8A5C /* UIColor+Extension.swift in Sources */,
+				CB3F8D682453A0340016E703 /* HMPostTagAPI.swift in Sources */,
 				CB863560225BA8590081CB75 /* HMDashLineView.swift in Sources */,
 				ED80DEC52256F3A100C9FAFF /* HMAPIProcessingManager.swift in Sources */,
 				CAC7D0A624519B8C004DA2E1 /* HMSharedData.swift in Sources */,

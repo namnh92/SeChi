@@ -41,6 +41,13 @@ class HMAPIMainEnvironment: HMAPIEnvironmentProtocol {
                                     timeout: HMAPIConfiguration.timeout)
     }
     
+    class var viettelAINLP: HMAPIMainEnvironment {
+        return HMAPIMainEnvironment(baseUrl: HMAPIConfiguration.viettelAINLPURL,
+                                    headers: HMAPIConfiguration.httpSpeechToTextHeader,
+                                    encoding: HMAPIConfiguration.encoding,
+                                    timeout: HMAPIConfiguration.timeout)
+    }
+    
     func parseApiErrorJson(_ json: JSON, statusCode: Int?) -> HMAPIError? {
         // Try to parse input json to error class according to your error json format
         // Example:
