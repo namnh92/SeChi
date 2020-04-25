@@ -34,7 +34,7 @@ class HMChatBotVC: HMBaseChatVC {
 
         super.viewDidLoad()
 
-        HMOneSignalNotificationService.shared.sendPush()
+//        HMOneSignalNotificationService.shared.sendPush()
         HMTexToSpeechAPI(text: "hệ thống tổng hợp tiếng nói trung tâm không gian mạng").execute(target: self)
     }
     

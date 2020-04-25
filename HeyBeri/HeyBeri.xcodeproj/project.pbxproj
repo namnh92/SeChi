@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47D0299224538B1C0016CED6 /* Specimen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D0299124538B1C0016CED6 /* Specimen.swift */; };
 		5D4D80CA0BC317C48D7B4325 /* Pods_onesignalberi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */; };
 		CAB60CFE2452EE0500A3DC68 /* HMHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */; };
 		CAB60CFF2452EE0500A3DC68 /* HMHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */; };
@@ -166,6 +167,7 @@
 		3C31547C026C415D80B8DF4F /* Pods-onesignalberi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-onesignalberi.debug.xcconfig"; path = "Target Support Files/Pods-onesignalberi/Pods-onesignalberi.debug.xcconfig"; sourceTree = "<group>"; };
 		3E3AAC873A9274BF51FE2320 /* Pods_onesignalberi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_onesignalberi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B06EB0059540CF6F29BA83 /* Pods_HeyBeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeyBeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D0299124538B1C0016CED6 /* Specimen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specimen.swift; sourceTree = "<group>"; };
 		58BE0CD3E43757D6611F2885 /* Pods-onesignalberi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-onesignalberi.release.xcconfig"; path = "Target Support Files/Pods-onesignalberi/Pods-onesignalberi.release.xcconfig"; sourceTree = "<group>"; };
 		754D26097AEB6B35C9FBED33 /* Pods-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore.release.xcconfig"; path = "Target Support Files/Pods-AppStore/Pods-AppStore.release.xcconfig"; sourceTree = "<group>"; };
 		88A5B51BF90ECABD85AACEA6 /* Pods_Develop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Develop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -774,6 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC7D08A24512C46004DA2E1 /* SharedData */,
+				47D0299124538B1C0016CED6 /* Specimen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1142,6 +1145,7 @@
 				EDAD9E3E2238C10A006D8A5C /* HMColors.swift in Sources */,
 				ED412A2422E56B4A008B802D /* HMSystemBoots.swift in Sources */,
 				CAC7D08E2451355C004DA2E1 /* ChatContentViewModel.swift in Sources */,
+				47D0299224538B1C0016CED6 /* Specimen.swift in Sources */,
 				CAC7D09824517CEB004DA2E1 /* HMSpeechRecognitionService.swift in Sources */,
 				CB58A48922ACFE8000F35564 /* HMErrorCode.swift in Sources */,
 				CBA5AD782281ECEC003B43B6 /* HMAPIUIIndicator.swift in Sources */,

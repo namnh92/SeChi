@@ -46,6 +46,8 @@ class HMOneSignalNotificationService: NSObject {
         OneSignal.add(self as OSPermissionObserver)
         
         OneSignal.add(self as OSSubscriptionObserver)
+        
+        sendPushOnOtherSide(objName: "Chồng Béo", objMessage: #""Cảm ơn chồng béo nhiều!""#)
     }
     
     func sendTag(userId: String?) {
@@ -60,14 +62,21 @@ class HMOneSignalNotificationService: NSObject {
         }
     }
     
-    func sendPush() {
+    func sendPush(objTask: String) {
         let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
         let userId = status.subscriptionStatus.userId
-        OneSignal.postNotification(["contents": ["en": "Test Message"],
+        OneSignal.postNotification(["contents": ["en": #"\#(objTask)"#],
                                     "include_player_ids": [userId],
-                                    "buttons": [["id": "id1", "text": "button1", "icon": "ic_menu_share"]
-                                        , ["id": "id2", "text": "button2", "icon": "ic_menu_send"]],
-                                    "ios_sound": "maybe-next-time.wav"])
+                                    "buttons": [["id": "id1", "text": "Đồng Ý"]
+                                        , ["id": "id2", "text": "Từ Chối"]
+                                        , ["id": "id3", "text": "Nhờ Trợ Giúp"]],                             "ios_sound": "maybe-next-time.wav"])
+    }
+    
+    func sendPushOnOtherSide(objName: String, objMessage: String) {
+        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        let userId = status.subscriptionStatus.userId
+        OneSignal.postNotification(["contents": ["en": #"Vợ Mập gửi \#u{2764} cho \#(objName): \#(objMessage)"#],
+                                    "include_player_ids": [userId]])
     }
 }
 
