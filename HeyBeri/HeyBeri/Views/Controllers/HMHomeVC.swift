@@ -33,6 +33,9 @@ class HMHomeVC: HMBaseVC {
                 calendarIndicatorView.isHidden = !reminderIndicatorView.isHidden
                 let direction: UIPageViewController.NavigationDirection = currentIndex == .contact ? .forward : .reverse
                 pageContainer.setViewControllers([pages[currentIndex.rawValue]], direction: direction, animated: true, completion: nil)
+                if let vc =  pages[MenuItem.contact.rawValue] as? HMContactVC {
+                    vc.isFromPush = isFromPush
+                }
             }
         }
     }

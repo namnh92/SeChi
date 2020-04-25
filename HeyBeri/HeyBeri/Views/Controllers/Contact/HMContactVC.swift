@@ -17,6 +17,7 @@ class HMContactVC: HMBaseVC {
     // MARK: - Consants
     private let contactNames = ["Chồng Béo", "Chị Ti <3", "Người phụ nữ vĩ đại", "Bố ơi giúp con với"]
     // MARK: - Variables
+    var isFromPush: Bool = false
     private var collapseSection: [Int] = []
     private var listContact: [HMContactModel] = [] {
         didSet {
@@ -118,6 +119,9 @@ extension HMContactVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isFromPush {
+            return
+        }
         if indexPath.row == 0 {
             if collapseSection.contains(indexPath.section) {
                 if let index = collapseSection.firstIndex(of: indexPath.section) {
