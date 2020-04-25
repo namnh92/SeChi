@@ -6,5 +6,4 @@ class Obj: Object {
     @objc dynamic var objMessgae  = ""
     @objc dynamic var objTask  = ""
     @objc dynamic var obj: Obj!
-    
 }
