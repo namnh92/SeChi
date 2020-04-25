@@ -14,7 +14,7 @@ class HMSoundWaveView: HMCustomNibView {
     @IBOutlet weak var containerView: UIView!
     
     // MARK: - Constants
-    private let lineColor = UIColor(hex: 0xEF5050)
+    private let lineColor = UIColor(hex: 0x79CEE8)
     private let lineWidth: CGFloat = 3
     private let distanceBetweenLines: CGFloat = 6
     private let maxDecibel: CGFloat = 40.0

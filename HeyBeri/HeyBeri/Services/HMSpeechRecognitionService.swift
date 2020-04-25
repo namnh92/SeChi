@@ -123,6 +123,7 @@ class HMSpeechRecognitionService: NSObject {
         if FileManager.default.fileExists(atPath: url.path) {
             if let data = try? Data(contentsOf: url) {
                 HMSpeechToTextAPI(data: data)
+                    .showIndicator(false)
                     .autoShowApiErrorAlert(false)
                     .autoShowRequestErrorAlert(false)
                     .execute(target: nil, success: { response in

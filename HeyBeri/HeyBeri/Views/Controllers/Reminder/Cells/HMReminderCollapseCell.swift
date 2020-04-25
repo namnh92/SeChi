@@ -2,7 +2,7 @@
 //  HMReminderCollapseCell.swift
 //  HeyBeri
 //
-//  Created by NamNH on 4/24/20.
+//  Created by Nguyễn Nam on 4/25/20.
 //  Copyright © 2020 Hypertech Mobile. All rights reserved.
 //
 
@@ -10,15 +10,20 @@ import UIKit
 
 class HMReminderCollapseCell: UITableViewCell {
 
+    @IBOutlet weak var backView: HMCornerView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = .clear
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setBorder(isBorder: Bool) {
+//        backView.cornerRadius = 5
+//        backView.cornerTopLeft = true
+//        backView.cornerTopRight = true
+//        backView.cornerBottomLeft = false
+//        backView.cornerBottomRight = false
     }
     
 }

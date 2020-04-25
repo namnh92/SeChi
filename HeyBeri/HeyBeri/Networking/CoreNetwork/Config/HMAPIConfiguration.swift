@@ -33,9 +33,8 @@ class HMAPIConfiguration {
         return ["Authorization": "Bearer \(HMConstants.chatBotToken)"]
     }
     
-    static var speechToTextURL: String {
-//        return "https://api.fpt.ai/hmi/asr/general"
-        return "https://viettelgroup.ai/voice/api/asr/v1/rest/decode_file"
+    static var viettelAIURL: String {
+        return "https://viettelgroup.ai/voice/api"
     }
     
     static var httpSpeechToTextHeader: HTTPHeaders {

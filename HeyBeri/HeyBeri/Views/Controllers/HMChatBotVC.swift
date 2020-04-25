@@ -26,8 +26,8 @@ class HMChatBotVC: HMBaseChatVC {
         sendMessage = { [weak self] message in
             guard let sSelf = self else { return }
             let parameters: [String: String] = ["user_id_send": "",
-                                             "user_id_receive": "",
-                                             "content": message,
+                                                "user_id_receive": "",
+                                                "content": message,
             ]
             HMChatService.instance.sendMessage(parameters: parameters)
         }
@@ -35,6 +35,7 @@ class HMChatBotVC: HMBaseChatVC {
         super.viewDidLoad()
 
 //        HMOneSignalNotificationService.shared.sendPush()
+        HMTexToSpeechAPI(text: "hệ thống tổng hợp tiếng nói trung tâm không gian mạng").execute(target: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
