@@ -1,1 +1,2 @@
-# SeChi
+# HACKCOVY2020
+## PROJECT SeChi
