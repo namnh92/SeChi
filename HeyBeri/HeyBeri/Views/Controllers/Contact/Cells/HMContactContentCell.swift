@@ -27,7 +27,7 @@ class HMContactContentCell: UITableViewCell {
                 checkBoxButton.isChecked = model.typeTask == .supportCompleted
                 checkBoxButton.didCheck = { isChecked in
                     if isChecked {
-                        HMOneSignalNotificationService.shared.sendPushOnOtherSide(objName: "", objMessage: "")
+                        HMOneSignalNotificationService.shared.sendPushSayThankYou(objName: "", objMessage: "")
                     }
                 }
             }

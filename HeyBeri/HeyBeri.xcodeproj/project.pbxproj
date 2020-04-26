@@ -285,7 +285,7 @@
 		EDAD9D1F2238AAF8006D8A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDAD9D212238AAF8006D8A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDAD9D4C2238B482006D8A5C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		EDAD9DCB2238B5B8006D8A5C /* HeyBeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyBeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDAD9DCB2238B5B8006D8A5C /* SeChi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeChi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAD9E332238C0F5006D8A5C /* HMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMConstants.swift; sourceTree = "<group>"; };
 		EDAD9E372238C101006D8A5C /* HMLogConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMLogConstants.swift; sourceTree = "<group>"; };
 		EDAD9E3B2238C10A006D8A5C /* HMColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMColors.swift; sourceTree = "<group>"; };
@@ -721,7 +721,7 @@
 		EDAD9D102238AAF6006D8A5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDAD9DCB2238B5B8006D8A5C /* HeyBeri.app */,
+				EDAD9DCB2238B5B8006D8A5C /* SeChi.app */,
 				CBC6AC8924532D1B007CB1B9 /* onesignalberi.appex */,
 			);
 			name = Products;
@@ -948,7 +948,7 @@
 			);
 			name = HeyBeri;
 			productName = ProjectBase;
-			productReference = EDAD9DCB2238B5B8006D8A5C /* HeyBeri.app */;
+			productReference = EDAD9DCB2238B5B8006D8A5C /* SeChi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1426,7 +1426,7 @@
 				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi;
-				PRODUCT_NAME = HeyBeri;
+				PRODUCT_NAME = SeChi;
 				PROVISIONING_PROFILE_SPECIFIER = "Hey Beri";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
 				SWIFT_VERSION = 4.2;
@@ -1453,7 +1453,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vn.heyberi;
-				PRODUCT_NAME = HeyBeri;
+				PRODUCT_NAME = SeChi;
 				PROVISIONING_PROFILE_SPECIFIER = "Hey Beri";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
 				SWIFT_VERSION = 4.2;
