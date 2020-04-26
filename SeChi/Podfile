@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+use_frameworks!
+
+def shared_pods
+  
+  # Common Pod
+  pod 'Alamofire'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SVProgressHUD'
+  pod 'Kingfisher', '~> 5.0'
+  
+  # Pod Database
+  pod 'RealmSwift'
+  
+  # Pod Keyboard
+  pod 'IQKeyboardManagerSwift'
+  
+  # Pod Socket
+  pod 'Socket.IO-Client-Swift'
+  
+  # Pod Notification
+  pod 'OneSignal'
+end
+
+target 'SeChi' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  # Pods for SeChi
+  shared_pods
+end
+
+target 'onesignalberi' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  pod 'OneSignal'
+  
+end
