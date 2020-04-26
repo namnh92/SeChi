@@ -30,6 +30,7 @@ class TaskReminder: Object {
     
     class func incrementID() -> Int {
         let realm = try! Realm()
+        print("Realm is located at:", realm.configuration.fileURL!)
         return (realm.objects(TaskReminder.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
 }

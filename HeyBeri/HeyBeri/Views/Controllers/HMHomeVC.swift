@@ -100,6 +100,19 @@ class HMHomeVC: HMBaseVC {
         navigationItem.rightBarButtonItems = [notifyItem]
     }
     
+//    split message and take the action word only
+    private func takeActionFromWord(msg: String) -> String {
+        let words_list = ["đón", "đi", "mua", "lau", "quét"]
+        var job = ""
+        for word in words_list {
+            if msg.contains(word) {
+                job = "\(word)\(msg.components(separatedBy: word)[1])"
+            }
+        }
+    return job
+        
+    }
+    
     @objc private func invokeMenuButton(_ sender: UIButton) {
         
     }
@@ -139,9 +152,9 @@ class HMHomeVC: HMBaseVC {
                 HMRealmService.instance.write { [weak self] (realm) in
                     let task = TaskReminder()
                     task.id = TaskReminder.incrementID()
-                    task.taskName = message ?? ""
                     task.taskDay = self?.date ?? ""
                     task.taskTime = self?.time ?? ""
+                    task.taskName = self!.takeActionFromWord(msg: message ?? "").replace(string: task.taskTime, with: "").replace(string: task.taskDay, with: "").replace(string: "lúc", with: "")
                     task.typeTask = .notCompleted
                     realm.add(task, update: .all)
                     HMReminderService.instance.createReminder(task)
@@ -150,6 +163,7 @@ class HMHomeVC: HMBaseVC {
                     }
                 }
             }
+            
         }
         addReminderVC.modalPresentationStyle = .overCurrentContext
         let transition = CATransition()
