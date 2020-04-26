@@ -1,14 +1,9 @@
 PODS:
   - Alamofire (5.1.0)
-  - InputBarAccessoryView (4.3.2):
-    - InputBarAccessoryView/Core (= 4.3.2)
-  - InputBarAccessoryView/Core (4.3.2)
   - IQKeyboardManagerSwift (6.5.5)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
-  - MessageKit (3.1.0):
-    - InputBarAccessoryView (~> 4.3.0)
   - OneSignal (2.13.1)
   - Realm (4.4.1):
     - Realm/Headers (= 4.4.1)
@@ -25,7 +20,6 @@ DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
   - Kingfisher (~> 5.0)
-  - MessageKit
   - OneSignal
   - RealmSwift
   - Socket.IO-Client-Swift
@@ -35,10 +29,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - InputBarAccessoryView
     - IQKeyboardManagerSwift
     - Kingfisher
-    - MessageKit
     - OneSignal
     - Realm
     - RealmSwift
@@ -49,10 +41,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
-  MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   OneSignal: fa98eaa90372bb367b6a4a1c1622ffb9832c7600
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
@@ -61,6 +51,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 572f8cd3a086240b662cfff6cff520a74a7bd54f
+PODFILE CHECKSUM: 6f3d3c3648d893ce7d8777945ccebe9bbcd95e74
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

@@ -19,9 +19,6 @@ def shared_pods
   # Pod Socket
   pod 'Socket.IO-Client-Swift'
   
-  # Pod Message Kit
-  pod 'MessageKit'
-  
   # Pod Notification
   pod 'OneSignal'
 end
