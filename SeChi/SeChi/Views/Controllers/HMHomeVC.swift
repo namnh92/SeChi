@@ -132,7 +132,12 @@ class HMHomeVC: HMBaseVC {
             let group = DispatchGroup()
             group.enter()
             HMNameEntityRecognitionAPI(text: message ?? "").execute(target: sSelf, success: { [weak self] (response) in
-                self?.time = response.time
+                let strDate = response.time?.replace(string: "giờ ", with: ":")
+                if let hour = Int(strDate?.split(separator: ":")[0] ?? "8"),
+                    let minute = Int(strDate?.split(separator: ":")[1] ?? "00") {
+                    let date = Date.init(hour: hour, minute: minute, second: 0)
+                    self?.time = date.stringBy(format: "HH:mm")
+                }
                 group.leave()
             }) { (error) in
                 group.leave()
@@ -153,7 +158,7 @@ class HMHomeVC: HMBaseVC {
                     let task = TaskReminder()
                     task.id = TaskReminder.incrementID()
                     task.taskDay = self?.date ?? ""
-                    task.taskTime = self?.time ?? ""
+                    task.taskTime = self?.time ?? "08:00"
                     task.taskName = self!.takeActionFromWord(msg: message ?? "").replace(string: task.taskTime, with: "").replace(string: task.taskDay, with: "").replace(string: "lúc", with: "")
                     task.typeTask = .notCompleted
                     realm.add(task, update: .all)
