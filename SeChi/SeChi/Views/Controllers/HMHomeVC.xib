@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMHomeVC" customModule="HeyBeri" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMHomeVC" customModule="SeChi" customModuleProvider="target">
             <connections>
                 <outlet property="addReminderButton" destination="gVf-Xr-M1I" id="2Q8-ec-McM"/>
                 <outlet property="calendarIndicatorView" destination="j3S-xa-gWo" id="oPX-Aa-PDv"/>
@@ -52,7 +52,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKc-Eb-qKu">
                                                     <rect key="frame" x="0.0" y="45" width="207" height="3"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBv-qp-LmB" customClass="HMGradientView" customModule="HeyBeri" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBv-qp-LmB" customClass="HMGradientView" customModule="SeChi" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="207" height="3"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
@@ -109,7 +109,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9I4-A5-cem">
                                                     <rect key="frame" x="0.0" y="45" width="207" height="3"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3S-xa-gWo" customClass="HMGradientView" customModule="HeyBeri" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3S-xa-gWo" customClass="HMGradientView" customModule="SeChi" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="207" height="3"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
@@ -179,6 +179,9 @@
                                         <constraint firstAttribute="width" constant="40" id="pqn-Fk-yO9"/>
                                     </constraints>
                                     <state key="normal" image="icon_account"/>
+                                    <connections>
+                                        <action selector="invokeTargetButton:" destination="-1" eventType="touchUpInside" id="aNk-B0-Uwk"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

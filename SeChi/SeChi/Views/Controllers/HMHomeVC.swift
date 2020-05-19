@@ -41,11 +41,13 @@ class HMHomeVC: HMBaseVC {
             }
         }
     }
+    var targetVC = HMTargetListVC.create()
     var taskId: Int = 0
     var isFromPush: Bool = false
     var time: String?
     var date: String?
     var action: String?
+    var isTargetDisplayed: Bool = false
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -119,6 +121,19 @@ class HMHomeVC: HMBaseVC {
     
     @objc private func invokeNotifyButton(_ sender: UIButton) {
         
+    }
+    
+    @IBAction func invokeTargetButton(_ sender: UIButton) {
+        if isTargetDisplayed {
+            isTargetDisplayed = false
+            targetVC.dismissToRoot()
+        } else {
+            isTargetDisplayed = true
+            if let vc = pageContainer.viewControllers?[0] as? HMBaseVC {
+                vc.modalPresentationStyle = .fullScreen
+                vc.present(HMTargetListVC.create(), animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func invokeChangeTab(_ sender: UIButton) {
