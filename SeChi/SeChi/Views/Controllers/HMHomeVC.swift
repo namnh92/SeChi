@@ -124,16 +124,11 @@ class HMHomeVC: HMBaseVC {
     }
     
     @IBAction func invokeTargetButton(_ sender: UIButton) {
-        if isTargetDisplayed {
-            isTargetDisplayed = false
-            targetVC.dismissToRoot()
-        } else {
-            isTargetDisplayed = true
-            if let vc = pageContainer.viewControllers?[0] as? HMBaseVC {
-                vc.modalPresentationStyle = .fullScreen
-                vc.present(HMTargetListVC.create(), animated: true, completion: nil)
-            }
-        }
+        let vc = HMTargetListVC.create()
+        vc.homeVC = self
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        navigationController?.present(nav, animated: false, completion: nil)
     }
     
     @IBAction func invokeChangeTab(_ sender: UIButton) {

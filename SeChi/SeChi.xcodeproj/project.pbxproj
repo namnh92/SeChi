@@ -67,6 +67,8 @@
 		CBC6AC9824534CDC007CB1B9 /* HMTexToSpeechAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AC9724534CDC007CB1B9 /* HMTexToSpeechAPI.swift */; };
 		CBC6AC9A2453503D007CB1B9 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6AC992453503D007CB1B9 /* Dictionary+Extension.swift */; };
 		CBDC92B122F880870064C03C /* HMRealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDC92AE22F880870064C03C /* HMRealmService.swift */; };
+		CBF1C1762474229900730238 /* HMTargetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1C1742474229900730238 /* HMTargetCell.swift */; };
+		CBF1C1772474229900730238 /* HMTargetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF1C1752474229900730238 /* HMTargetCell.xib */; };
 		ED412A2222E56B42008B802D /* HMAPIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED412A1F22E56B42008B802D /* HMAPIConfiguration.swift */; };
 		ED412A2422E56B4A008B802D /* HMSystemBoots.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86356D225BAFD50081CB75 /* HMSystemBoots.swift */; };
 		ED412A9E22E6B9A4008B802D /* HMPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED412A9A22E6B9A4008B802D /* HMPermission.swift */; };
@@ -235,6 +237,8 @@
 		CBC6AC9724534CDC007CB1B9 /* HMTexToSpeechAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMTexToSpeechAPI.swift; sourceTree = "<group>"; };
 		CBC6AC992453503D007CB1B9 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		CBDC92AE22F880870064C03C /* HMRealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMRealmService.swift; sourceTree = "<group>"; };
+		CBF1C1742474229900730238 /* HMTargetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMTargetCell.swift; sourceTree = "<group>"; };
+		CBF1C1752474229900730238 /* HMTargetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMTargetCell.xib; sourceTree = "<group>"; };
 		D3D54DDFEEB860A031F458FD /* Pods-HeyBeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.debug.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.debug.xcconfig"; sourceTree = "<group>"; };
 		D6C4A1F82E6FA9EA173FC72B /* Pods-Develop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Develop.debug.xcconfig"; path = "Target Support Files/Pods-Develop/Pods-Develop.debug.xcconfig"; sourceTree = "<group>"; };
 		E67B7C33E2F56F48374DB3CC /* Pods-HeyBeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeyBeri.release.xcconfig"; path = "Target Support Files/Pods-HeyBeri/Pods-HeyBeri.release.xcconfig"; sourceTree = "<group>"; };
@@ -546,6 +550,25 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		CBF1C1722474227100730238 /* TargetList */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1C1732474227E00730238 /* Cells */,
+				CAEBC72D247404B300877DA2 /* HMTargetListVC.swift */,
+				CAEBC72E247404B300877DA2 /* HMTargetListVC.xib */,
+			);
+			path = TargetList;
+			sourceTree = "<group>";
+		};
+		CBF1C1732474227E00730238 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1C1742474229900730238 /* HMTargetCell.swift */,
+				CBF1C1752474229900730238 /* HMTargetCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E501A1E023605491002D1298 /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,14 +796,13 @@
 		EDAD9D462238B287006D8A5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBF1C1722474227100730238 /* TargetList */,
 				CB3F8D5C24538AA80016E703 /* AddReminder */,
 				CB3F8D522453840B0016E703 /* Contact */,
 				CAEC3B742452FAD50076DB66 /* Reminder */,
 				CB86353B225BA5360081CB75 /* Base */,
 				CAB60CFC2452EE0500A3DC68 /* HMHomeVC.swift */,
 				CAB60CFD2452EE0500A3DC68 /* HMHomeVC.xib */,
-				CAEBC72D247404B300877DA2 /* HMTargetListVC.swift */,
-				CAEBC72E247404B300877DA2 /* HMTargetListVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1035,6 +1057,7 @@
 				CB3F8D5B2453844D0016E703 /* HMContactContentCell.xib in Resources */,
 				CAEBC730247404B400877DA2 /* HMTargetListVC.xib in Resources */,
 				CB3F8D51245383E90016E703 /* HMContactVC.xib in Resources */,
+				CBF1C1772474229900730238 /* HMTargetCell.xib in Resources */,
 				ED73841A2317D08D0026435C /* Roboto-Italic.ttf in Resources */,
 				CAC7D0A0245181C7004DA2E1 /* HMSoundWaveView.xib in Resources */,
 				ED7384022317D08D0026435C /* Roboto-Black.ttf in Resources */,
@@ -1205,6 +1228,7 @@
 				CB6A11C02453799900833C8E /* HMReminderCell.swift in Sources */,
 				ED80DEBA2256F24A00C9FAFF /* HMAPIRequest.swift in Sources */,
 				CB3F8D5A2453844D0016E703 /* HMContactContentCell.swift in Sources */,
+				CBF1C1762474229900730238 /* HMTargetCell.swift in Sources */,
 				CB3F8D5F24538ABF0016E703 /* HMAddReminderVC.swift in Sources */,
 				CAC7D09624517AE2004DA2E1 /* HMSpeechToTextAPI.swift in Sources */,
 				ED80DEC12256F34300C9FAFF /* HMAPIDispatcher.swift in Sources */,
